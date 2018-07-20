@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Prueba Firebase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root">
+    <header>
+      <h1>Unidos</h1>
+    </header>
+    <form id="form">
+      <p>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" />
+      </p>
+      <p>
+        <label for="email">Correo electrónico:</label>
+        <input type="email"  name="email" id="email" />
+      </p>
+      <p>
+        <label for="password">Nueva contraseña:</label>
+        <input type="password" name="password" id="password" />
+      </p>
+      <p>
+        <input type="button" name="signup" id="signup" value="Regístrate" />
+      </p>
+    </form>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA53_mfJ9Oqp3KIhDKebY4bc8dVj3jPnpw",
+      authDomain: "prueba-firebase-miluska.firebaseapp.com",
+      databaseURL: "https://prueba-firebase-miluska.firebaseio.com",
+      projectId: "prueba-firebase-miluska",
+      storageBucket: "prueba-firebase-miluska.appspot.com",
+      messagingSenderId: "86855483666"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
