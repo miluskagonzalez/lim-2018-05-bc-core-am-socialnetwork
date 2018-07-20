@@ -4,7 +4,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const btnRegister = document.getElementById('btnRegister')
-const btnLogin = document.getElementById('btnLogin')
+const btnSignin = document.getElementById('btnSignin')
 const btnLogout = document.getElementById('btnLogout')
 
 
@@ -33,29 +33,3 @@ btnRegister.addEventListener('click', () => {
   });
 })
 
-
-btnLogin.addEventListener('click', () => {
-  firebase.auth().signInWithEmailAndPassword(email.value, password.value)
-  .then (() => {
-    console.log('Verificado')
-    login.classList.add("hiden");
-    logout.classList.remove("hiden");
-
-    var user = firebase.auth().currentUser;
-
-    username.innerHTML = user.email;
-  })
-  .catch(function(error) {
-    console.log('Contraseña Incorrecta')
-  });
-})
-
-btnLogout.addEventListener('click', () => {
-  firebase.auth().signOut().then(function() {
-    console.log('Cerro Sesión');
-    login.classList.remove("hiden");
-    logout.classList.add("hiden");
-  }).catch(function(error) {
-    console.log('Error al cerrar Sesión');
-  });
-})
