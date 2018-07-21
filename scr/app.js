@@ -8,16 +8,6 @@ const btnSignin = document.getElementById('btnSignin')
 const btnLogout = document.getElementById('btnLogout')
 
 
-window.onload = () => {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('User is signed in.')
-    } else {
-      console.log('No user is signed in.')
-    }
-    console.log('User' + JSON.stringify(user))
-  });
-}
 btnRegister.addEventListener('click', () => {
     // le pasamos con value, para probar.
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
