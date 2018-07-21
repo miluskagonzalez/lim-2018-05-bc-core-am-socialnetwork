@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Unidos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root">
+    <header>
+      <h1>Unidos</h1>
+    </header>
+    <form id="form">
+      <p>
+        <label for="name">Nombre:</label>
+        <input type="text" name="name" id="name" />
+      </p>
+      <p>
+        <label for="email">Correo electrónico:</label>
+        <input type="email"  name="email" id="email" />
+      </p>
+      <p>
+        <label for="password">Nueva contraseña:</label>
+        <input type="password" name="password" id="password" />
+      </p>
+      <p>
+        <input type="button" name="signup" id="signup" value="Regístrate" />
+      </p>
+    </form>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDebuWMYcGSWAk5x7YGxciGKStz56KOHlY",
+      authDomain: "social-network-salud.firebaseapp.com",
+      databaseURL: "https://social-network-salud.firebaseio.com",
+      projectId: "social-network-salud",
+      storageBucket: "",
+      messagingSenderId: "628278045322"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
