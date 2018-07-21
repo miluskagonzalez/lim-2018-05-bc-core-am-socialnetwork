@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Social Network</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+  <div class="grid">
+    <form class="form-login">
+      <label for="user-name"></label>
+      <input id="user-name" type="email" name="username" class="form-input" placeholder="Usuario" required>
+      <label for="password"></label>
+      <input id="password" type="password" name="password" class="form-input" placeholder="Contraseña" required>
+      <button type="submit" class="btn-form">Entrar</button>
+    </form>
+    <p class="text-center">Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los
+      <a href="#"> Términos de servicio y las políticas de privacidad</a>
+    </p>
+    <button class="btn-form">Registrarse</button> <br>
+    <button id="login-google">Google</button>
+    <button id="login-facebook">Facebook</button>
+  </div>
+  <div>
+    <h2>Welcome User</h2>
+  </div>
+  <script src="app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDb0OyYdpli09GCDI7aCgu4My5fHjFCxJs",
+      authDomain: "social-network-8099a.firebaseapp.com",
+      databaseURL: "https://social-network-8099a.firebaseio.com",
+      projectId: "social-network-8099a",
+      storageBucket: "social-network-8099a.appspot.com",
+      messagingSenderId: "868556112616"
+    };
+    firebase.initializeApp(config);
+  </script>
+</body>
+
+</html>
