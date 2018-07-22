@@ -1,36 +1,35 @@
-//SDK de Facebook para JavaScript
-window.fbAsyncInit = () => {
-  FB.init({
-    appId: '198195514191903',
-    cookie: true,
-    xfbml: true,
-    version: 'v3.0'
-  });
-  FB.AppEvents.logPageView();
-};
-(d, s, id) => {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s); 
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-};
-(document, 'script', 'facebook-jssdk');
-
-// Estado de inicio de sesion
-FB.getLoginStatus((response) => {
-  statusChangeCallback(response);
+// Declarando variables del form
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const signup = document.getElementById('signup');
+const form = document.getElementById('form');
+// Evento de registro
+signup.addEventListener('click', () => {
+  username = name.value;
+  firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+    .then(user => {
+      //Verificando que se registró el usuario
+      console.log('nuevo usuario registrado!');
+    })
+    .catch(error => {
+      // Mostrando error en consola
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
+    // reset() limpia el form
+    form.reset();
+    console.log(username);
+    alert(`¡Gracias por registrarte ${username}!`);
 });
-const ref = new firebase('https://social-network-8099a.firebaseapp.com/__/auth/handler');
-document.getElementById('login-facebook').addEventListener('click', () => {
-  ref.autWithOAuthPopup('facebook', (error, data) => {
-    if (error) {
-      console.log('error', error.message);
-    } else {
-      console.log('ok', data);
-    };
-  });
+// Verificando estado (logueado / no logueado) del usuario
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // Usuario está logueado
+    console.log(user)
+  } else {
+    // Usuario no está logueado
+    console.log(user, 'is signed out')
+  }
 });

@@ -3,60 +3,118 @@
   }
  
 body {
-  background: #50a3a2;
-  background: -webkit-linear-gradient(left, #022F40 0%, #38AECC 50%);
+  background-color: #edf3f5;
+  /* background: -webkit-linear-gradient(left, #022F40 0%, #38AECC 50%); */
 	width: 100%;
 }
 
+.rgba-header {
+  background: #022f4096;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  font-family: 'Monoton', cursive;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  color: #022F40;
+  font-size: 130%;
+  padding: 5%;
+}
+
+.logotipo-heart {
+  margin-top: 26%;
+  margin-bottom: 2%;
+  width: 47%;
+}
+
 .grid {
+  height: 400px;
   max-width: 600px;
 	margin: auto;
-	padding: 40px 0;
-	height: 400px;
+  padding-bottom: 30%;
 	text-align: center;
 }
-.form-input {
+
+.input-form {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #022f4033;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #022F40;
   display: block;
-	border: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 5px;
-  padding: 10px 15px;
-	margin: auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  margin: auto;
+  margin-bottom: 3.5%;
+  outline: none;
+  padding: 7px 12px;
 	text-align: center;
-  font-size: 18px;
-  width: 250px;
+  width: 180px;
 	transition-duration: 0.25s;
 }
 
-.form-input:hover{
-	background-color: rgba(255, 255, 255, 0.4);
+.input-form:hover{
+	background-color: #022f404d;
 }
 
-.form-input:focus{
+.input-form:focus{
   background-color: white;
-	width: 300px;
+	width: 210px;
+}
+
+.reset-password {
+  color: #000;
+  cursor: pointer;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  /* text-decoration: none; */
+}
+
+.sex-selector {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 5%;
+  text-align: center;
+}
+
+.container-date {
+  margin-left: 15%;
+}
+
+.date-selector {
+  border-radius: 5px;
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 4%;
+  margin-bottom: 2%;
 }
   
 .btn-form {
-	background-color: white;
+	background-color: #022F40;
   border: 0;
-  box-shadow: 5px 10px 18px #022F40;
-	padding: 10px 15px;
-  cursor: pointer;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px #022F40;
+  color: #fff;
+  cursor: pointer;
+  cursor: pointer;
+  display: block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
-	width: 140px;
-	cursor: pointer;
-	font-size: 18px;
+  outline: none;
+  padding: 7px 12px;
+	width: 120px;
+  text-align: center;
 	transition-duration: 0.25s;
 }
 
 .btn-form:hover{
-	background-color: rgb(245, 247, 249);
+	background-color: rgb(7, 64, 83);
 }
 
-.text-center {
+.privacy-policy-text {
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 12px;
   margin-left: 3%;
   margin-right: 3%;
@@ -64,14 +122,123 @@ body {
   text-align: center;
 }
 
-.login-google, .login-facebook {
-  display: block;
+.register-button {
+  cursor: pointer;
+  display: inline-block;
   margin: auto;
-  padding: 14%;
+  margin-right: 2%;
+  width: 7%;
+}
+
+.btn-whatsapp {
+  width: 7.8%;
+}
+
+.enter-with-networks {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.reg-networks {
+  display: none;
+}
+
+.text-networks {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-top: 6%;
+}
+
+.enter-with-e-mail {
+  display: block;
+  font-family: 'Roboto Condensed', sans-serif;
+  margin-left: 5%;
+  margin-bottom: 7%;
+  margin-top: 35%;
+}
+
+.welcome {
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  margin-top: 15%;
+  padding-top: 15%;
+  padding-left: 10%;
+  padding-bottom: 15%;
 }
 
 @media screen and (min-width: 600px) {
-  .grid {
-    margin-top: 7%;
+  .logo {
+    color: #022f40;
+    font-size: 170%;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%; 
+  }
+  .logotipo-heart {
+    margin-top: 14%;
+  }
+  .input-form {
+    margin-bottom: 3%;
+    padding: 10px 15px;
+    width: 250px;
+  }
+  .root {
+    width: 100%;
+  }
+  .reg-email {
+    float: right;
+    margin-right: 10%;
+  }
+  .reg-email .input-form {
+    margin-bottom: 7%;
+  }
+  .input-form:focus {
+    width: 300px;
+  }
+  .reg-networks {
+    display: block;
+    float: left;
+    margin-left: 9%;
+    width: 45%;
+  }
+  .reg-networks .logotipo-heart {
+    display: block;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 2%;
+  }
+  .reg-networks .register-button {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    width: 8%;
+  }
+  .reg-networks .btn-google {
+    margin-left: 30%;
+  }
+  .reg-networks .btn-whatsapp {
+    width: 9%;
+  }
+  .reg-email .btn-form {
+    margin-top: 6%;
+    margin-bottom: 25%;
+  }
+  .register-button {
+    width: 4%;
+  }
+  .enter-with-e-mail {
+    font-size: 30px;
+    margin-bottom: 11%;
+  }
+  .btn-whatsapp {
+    width: 4.5%;
+  }
+  .sex-selector {
+    margin-top: 0;
+  }
+  .date-selector {
+    font-size: 20px;
+    margin-top: 6%;
+    width: auto;
   }
 }
