@@ -227,3 +227,55 @@
 </body>
 
 </html>
+
+<!-- //Expresiones regulares 1
+****************************html***********************
+<form>
+  <label>Email :</label>
+  <input type = "text" id="correo" placeholder="ingresa tu email">
+  <input type ="button" value ="validar" onclick="validacion(form.correo.value)">
+</form> 
+
+*******************js***************
+function validacion(valor)
+{
+//creamos nuestra expresion regular (.tes lo que va hacer es comparar la cadena con el valor)
+if(/^[A-Z-a-z-0-9]+@+[a-z]+.+[a-z]/.test(valor))
+{
+alert('Correo '+valor+' Correcto')
+return (true);
+}
+alert('Correo Incorrecto');
+return(false);
+}
+
+Expresiones Regulares2
+
+
+<form method="post" action="upload.php" enctype="multipart/form-data">
+  <div><span>Nombre</span><input id="nombre" type="text" name="nombre" required /></div>
+  <div><span>Email</span><input id="email" type="email" name="correo" required /></div>
+  <div><input type="submit" value="Enviar"/></div>
+</form>
+
+*******************js***************
+var n = document.getElementById('nombre');
+var m = document.getElementById('email')
+var f = document.getElementById('form')[0];
+
+    f.onsubmit = function(){
+        var er = /^[a-z]{3,}$/i;
+        var rta = er.test(n.value);
+
+        var er1 = /^[A-Z-a-z-0-9]+@+[a-z]+.+[a-z]/;
+        var rta1 = er1.test(m.value);
+
+        if(rta==false){
+            alert('El nombre no lleva simbolos')
+            return false;
+        }
+        if(rta1==false){
+            alert('El correo lleva @ y una extensión')
+            return false;
+        }
+    } -->
