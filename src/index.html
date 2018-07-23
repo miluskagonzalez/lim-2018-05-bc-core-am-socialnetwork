@@ -22,8 +22,8 @@
     <form class="form-login">
       <label for="user-name"></label>
       <input id="user-name" type="email" name="username" class="input-form" placeholder="Usuario" required/>
-      <label for="password"></label>
-      <input id="password" type="password" name="password" class="input-form" placeholder="Contraseña" required/>
+      <label for="pass-word"></label>
+      <input id="pass-word" type="pass-word" name="password" class="input-form" placeholder="Contraseña" required/>
       <a class="reset-password" href="#">¿Se te olvidó tu contraseña?</a>
       <button type="submit" class="btn-form">Entrar</button>
     </form>
@@ -32,13 +32,14 @@
     </p>
     <button class="btn-form">Registrarse</button>
     <img class="register-button btn-google" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google">
-    <img class="register-button btn-facebook" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook">
+    <!--Botón de log-in con Facebook-->
+    <img id="fbBtn" class="register-button btn-facebook" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook">
     <img class="register-button btn-whatsapp" src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-transparent-background-8.png"
       alt="Whatsapp">
   </div>
 
   <div id="root">
-    <form class="reg-networks" id="form">
+    <form class="reg-networks">
       <img class="logotipo-heart" src="https://comofuncionaque.com/wp-content/uploads/2015/11/salud-publica1.png" alt="logotipo-corazon">
       <h2 class="enter-with-networks">¡Ahora puedes registrarte con Google, Facebook o Whats'app!</h2>
       <p class="text-networks">Conectarse con cualquiera de ellos es rápido y fácil, y podrás ver cuáles de sus amigos ya están usando UNIDOS.</p>
@@ -47,16 +48,17 @@
       <img class="register-button btn-whatsapp" src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-transparent-background-8.png"
         alt="Whatsapp">
     </form>
-    <form class="reg-email" id="form">
-      <h2 class="enter-with-e-mail">Ingresar con e-mail</h2>
-      <label for="name"></label>
-      <input type="text" name="name" class="input-form" id="name" placeholder="Nombre" required />
+    <!--Formulario de registro con email-->
+    <form class="reg-email" id="sign-up-form">
+      <h2 class="enter-with-e-mail">Registrarse con e-mail</h2>
+      <label for="username"></label>
+      <input type="text" name="username" class="input-form" id="username" placeholder="Nombre de usuario" required />
       <label for="email"></label>
       <input type="email" name="email" class="input-form" id="email" placeholder="Correo electrónico" required />
       <label for="password"></label>
       <input type="password" name="password" class="input-form" id="password" placeholder="Nueva contraseña" required />
-      <label for="password"></label>
-      <input type="password" name="password" class="input-form" id="password" placeholder="Repetir contraseña" required />
+      <!-- <label for="password"></label>
+      <input type="password" name="password" class="input-form" id="" placeholder="Repetir contraseña" required /> -->
       <div class="sex-selector">
         <input type="radio" name="sex" value="1" class="sex" id="female" required />
         <label for="female">Mujer</label>
@@ -202,27 +204,16 @@
           <option value="1918">1918</option>
         </select>
       </div>
-      <button class="btn-form" type="button" name="signup" id="signup">Registrarse</button>
+      <!--Botón de registro con email-->
+      <button class="btn-form" type="button" name="sign-up" id="sign-up">Registrarse</button>
     </form>
   </div>
 
   <div>
     <h2 class="welcome">Welcome User!</h2>
   </div>
-
+  <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDebuWMYcGSWAk5x7YGxciGKStz56KOHlY",
-      authDomain: "social-network-salud.firebaseapp.com",
-      databaseURL: "https://social-network-salud.firebaseio.com",
-      projectId: "social-network-salud",
-      storageBucket: "",
-      messagingSenderId: "628278045322"
-    };
-    firebase.initializeApp(config);
-  </script>
   <script src="app.js"></script>
 </body>
 
