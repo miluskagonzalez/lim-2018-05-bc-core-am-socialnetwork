@@ -46,6 +46,35 @@ const validate = () => {
 }
 // Evento de registro
 signUp.addEventListener('click', validate);
+// Creando instancia del objeto proveedor de Facebook
+const fbProvider = new firebase.auth.FacebookAuthProvider();
+// Sign-in con Facebook
+const fbSignIn = () => {
+  firebase.auth().signInWithPopup(fbProvider)
+    .then(result => {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      console.log('result', result)
+      const token = result.credential.accessToken;
+      console.log('token', token)
+      // The signed-in user info.
+      const user = result.user;
+      console.log('user', user)
+      // ...
+      alert('Habemus Facebook signin')
+    }).catch(function (error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      const credential = error.credential;
+      // ...
+      console.log(error)
+    });
+}
+// Evento sign-in con Facebook
+fbBtn.addEventListener('click', fbSignIn)
 // Verificando estado (logueado / no logueado) del usuario
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
@@ -56,29 +85,3 @@ firebase.auth().onAuthStateChanged(user => {
     console.log(user, 'is signed out')
   }
 });
-// Creando instancia del objeto proveedor de Facebook
-const fbProvider = new firebase.auth.FacebookAuthProvider();
-// Log-in con Facebook
-const fbLogIn = () => {
-  firebase.auth().signInWithPopup(fbProvider)
-    .then(result => {
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      // ...
-      alert('Habemus Facebook login')
-    }).catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
-      console.log(error)
-    });
-}
-// Evento log-in con Facebook
-fbBtn.addEventListener('click', fbLogIn)
