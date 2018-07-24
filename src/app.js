@@ -75,7 +75,7 @@ const fbSignIn = () => {
     });
 }
 // Evento sign-in con Facebook
-fbBtn.addEventListener('click', fbLogIn)
+fbBtn.addEventListener('click', fbSignIn)
 // Sign-in con Google
 googleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
