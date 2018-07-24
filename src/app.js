@@ -15,6 +15,7 @@ const password = document.getElementById('password');
 const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
 const fbBtn = document.getElementById('fbBtn');
+const btnGoogle = document.getElementById('btnGoogle');
 // Crear usuario con email y contraseña
 const emailSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
@@ -82,3 +83,20 @@ const fbLogIn = () => {
 }
 // Evento log-in con Facebook
 fbBtn.addEventListener('click', fbLogIn)
+
+// Log-in con Google
+btnGoogle.addEventListener('click', () =>{
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      console.log('Sesion con google')
+    }).catch(function(error) {
+      console.log (error.code);
+      console.log (error.message);
+      // The email of the user's account used.
+      console.log (error.email);
+      // The firebase.auth.AuthCredential type that was used.
+      console.log ( error.credential);
+      // ...
+    });
+
+  })
