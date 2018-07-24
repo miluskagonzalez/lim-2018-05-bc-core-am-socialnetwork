@@ -15,11 +15,12 @@ const password = document.getElementById('password');
 const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
 const fbBtn = document.getElementById('fbBtn');
-// Crear usuario con email y contraseña
+const btnGoogle = document.getElementById('btnGoogle');
+// Creando usuario con email y contraseña
 const emailSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
     .then(user => {
-      console.log(password.value)
+      console.log(password.value);
       //Verificando que se registró el usuario
       console.log('nuevo usuario registrado!');
     })
@@ -28,57 +29,79 @@ const emailSignUp = () => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
-      console.log(password.value)
+      console.log(password.value);
     });
   // reset() limpia el form
   signUpForm.reset();
   console.log(name);
   alert(`¡Gracias por registrarte ${name}!`);
 }
-// Validar inputs
+// Validando inputs
 const validate = () => {
   if (/^\w+([\.-]?\w+)*@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
     /^[a-zA-Z\d]{6,}$/.test(password.value) &&
     /^[a-z]{3,}$/i.test(username.value)) {
     const name = username.value;
-    emailSignUp()
+    emailSignUp();
   }
 }
-// Evento de registro
+// Evento de validación y registro
 signUp.addEventListener('click', validate);
-// Verificando estado (logueado / no logueado) del usuario
-firebase.auth().onAuthStateChanged(user => {
-  if (user) {
-    // Usuario está logueado
-    console.log(user)
-  } else {
-    // Usuario no está logueado
-    console.log(user, 'is signed out')
-  }
-});
-// Creando instancia del objeto proveedor de Facebook
-const fbProvider = new firebase.auth.FacebookAuthProvider();
-// Log-in con Facebook
-const fbLogIn = () => {
+// Sign-in con Facebook
+const fbSignIn = () => {
+  // Creando instancia del objeto proveedor de Facebook
+  const fbProvider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(fbProvider)
     .then(result => {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
+      console.log('result', result);
+      const token = result.credential.accessToken;
+      console.log('token', token);
       // The signed-in user info.
-      var user = result.user;
+      const user = result.user;
+      console.log('user', user);
       // ...
-      alert('Habemus Facebook login')
+      alert('Habemus Facebook signin')
     }).catch(function (error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
       // The email of the user's account used.
-      var email = error.email;
+      const email = error.email;
       // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+      const credential = error.credential;
       // ...
       console.log(error)
     });
 }
-// Evento log-in con Facebook
-fbBtn.addEventListener('click', fbLogIn)
+// Evento sign-in con Facebook
+fbBtn.addEventListener('click', fbSignIn)
+// Sign-in con Google
+googleSignIn = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log('Sesion con google');
+      console.log(result);
+    }).catch(error => {
+      console.log(error.code);
+      console.log(error.message);
+      // The email of the user's account used.
+      console.log(error.email);
+      // The firebase.auth.AuthCredential type that was used.
+      console.log(error.credential);
+      // ...
+    })
+};
+// Evento sign-in con Google
+btnGoogle.addEventListener('click', googleSignIn);
+// Estado del usuario actual
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    // Usuario está logueado
+    console.log(user);
+  } else {
+    // Usuario no está logueado
+    console.log(user, 'is signed out');
+  }
+});
