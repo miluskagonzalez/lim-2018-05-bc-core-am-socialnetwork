@@ -16,6 +16,7 @@ const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
 const fbBtn = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
+const btnSignOut = document.getElementById('sign-out');
 // Creando usuario con email y contraseña
 const emailSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
@@ -97,11 +98,21 @@ googleSignIn = () => {
 btnGoogle.addEventListener('click', googleSignIn);
 // Estado del usuario actual
 firebase.auth().onAuthStateChanged(user => {
+  // Usuario está logueado
+  console.log(user);
   if (user) {
-    // Usuario está logueado
-    console.log(user);
+    btnSignOut.classList.remove('hide');
   } else {
+    btnSignOut.classList.add('hide');
     // Usuario no está logueado
     console.log(user, 'is signed out');
   }
+});
+// Evento sign-out
+btnSignOut.addEventListener('click', () => {
+  firebase.auth().signOut().then(() => {
+    console.log('Signed Out');
+  }, (error) => {
+    console.error('Sign Out Error', error);
+  });
 });
