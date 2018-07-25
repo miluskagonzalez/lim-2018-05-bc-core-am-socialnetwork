@@ -111,16 +111,19 @@ firebase.auth().onAuthStateChanged(user => {
     console.log(user, 'is signed out');
   }
 });
-// Evento log-in
+// Evento sign-in con correo ya registrado
 btnLogIn.addEventListener('click', e => {
-  // Consiguiendo valor de e-mail y ontraseña
+  // Consiguiendo valor de e-mail y contraseña
   const email = userEmail.value;
   const pass = userPassword.value;
-  const auth = firebase.auth();
+  // const auth = firebase.auth();
   // Sign in
-  const promise = auth.signInWithEmailAndPassword(email, pass);
+  const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
     // implementar
-    promise.catch(e => console.log('Usuario no existente, Registrarse'))
+    promise.then(result => {
+      console.log(result);
+    })
+    .catch(e => console.log('Usuario no existente, Registrarse'))
 });
 // Evento sign-out
 btnSignOut.addEventListener('click', () => {
