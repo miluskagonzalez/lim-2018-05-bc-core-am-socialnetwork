@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="http://nicotinell.es/content/img/beneficios-dejar-de-fumar-salud-fisica-1.png" />
+  <link rel="icon" type="image/x-icon" href="http://nicotinell.es/content/img/beneficios-dejar-de-fumar-salud-fisica-1.png"
+  />
   <title>Social Network</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
@@ -23,7 +24,7 @@
       <label for="user-name"></label>
       <input id="user-name" type="email" name="username" class="input-form" placeholder="Usuario" required/>
       <label for="pass-word"></label>
-      <input id="pass-word" type="pass-word" name="password" class="input-form" placeholder="Contraseña" required/>
+      <input id="pass-word" type="password" name="password" class="input-form" placeholder="Contraseña" required/>
       <a class="reset-password" href="#">¿Se te olvidó tu contraseña?</a>
       <button type="submit" class="btn-form">Entrar</button>
     </form>
@@ -32,7 +33,7 @@
     </p>
     <button class="btn-form">Registrarse</button>
     <!--Botón de log-in con Google-->
-    <img  id="btnGoogle" class="register-button btn-google" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google">
+    <img id="btnGoogle" class="register-button btn-google" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google">
     <!--Botón de log-in con Facebook-->
     <img id="fbBtn" class="register-button btn-facebook" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook">
     <img class="register-button btn-whatsapp" src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-transparent-background-8.png"
@@ -58,8 +59,6 @@
       <input type="email" name="email" class="input-form" id="email" placeholder="Correo electrónico" required />
       <label for="password"></label>
       <input type="password" name="password" class="input-form" id="password" placeholder="Nueva contraseña" required />
-      <!-- <label for="password"></label>
-      <input type="password" name="password" class="input-form" id="" placeholder="Repetir contraseña" required /> -->
       <div class="sex-selector">
         <input type="radio" name="sex" value="1" class="sex" id="female" required />
         <label for="female">Mujer</label>
@@ -70,9 +69,10 @@
       <button class="btn-form" type="button" name="sign-up" id="sign-up">Registrarse</button>
     </form>
   </div>
-
+  <!-- Tercera vista (actualizar con componentes o diferentes html)-->
   <div>
-    <h2 class="welcome">Welcome User!</h2>
+    <button class="sign-out hide" type="button" id="sign-out">Cerrar Sesion</button>
+    <h2 id="welcome-name" class="welcome hide">Bienvenido(a)</h2>
   </div>
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
