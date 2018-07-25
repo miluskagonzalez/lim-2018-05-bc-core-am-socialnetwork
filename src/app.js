@@ -16,6 +16,9 @@ const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
 const fbBtn = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
+const userEmail = document.getElementById('user-name');
+const userPassword = document.getElementById('pass-word');
+const btnLogIn = document.getElementById('log-in');
 const btnSignOut = document.getElementById('sign-out');
 // Creando usuario con email y contraseña
 const emailSignUp = () => {
@@ -107,6 +110,17 @@ firebase.auth().onAuthStateChanged(user => {
     // Usuario no está logueado
     console.log(user, 'is signed out');
   }
+});
+// Evento log-in
+btnLogIn.addEventListener('click', e => {
+  // Consiguiendo valor de e-mail y ontraseña
+  const email = userEmail.value;
+  const pass = userPassword.value;
+  const auth = firebase.auth();
+  // Sign in
+  const promise = auth.signInWithEmailAndPassword(email, pass);
+    // implementar
+    promise.catch(e => console.log('Usuario no existente, Registrarse'))
 });
 // Evento sign-out
 btnSignOut.addEventListener('click', () => {
