@@ -95,7 +95,6 @@ body {
   box-shadow: 1px 1px 5px #022F40;
   color: #fff;
   cursor: pointer;
-  cursor: pointer;
   display: block;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
@@ -165,6 +164,30 @@ body {
   padding-bottom: 15%;
 }
 
+.sign-out {
+  background-color: #022F40;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px #022F40;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  outline: none;
+  padding: 9px 14px;
+	width: 160px;
+  text-align: center;
+	transition-duration: 0.25s;
+}
+
+.sign-out:hover{
+	background-color: rgb(7, 64, 83);
+}
+
 @media screen and (min-width: 600px) {
   .logo {
     color: #022f40;
@@ -186,7 +209,8 @@ body {
   }
   .reg-email {
     float: right;
-    margin-right: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .reg-email .input-form {
     margin-bottom: 7%;
@@ -241,4 +265,10 @@ body {
     margin-top: 6%;
     width: auto;
   }
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }
