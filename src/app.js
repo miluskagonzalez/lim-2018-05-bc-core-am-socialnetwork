@@ -8,18 +8,20 @@ const config = {
   messagingSenderId: "628278045322"
 };
 firebase.initializeApp(config);
-// Declarando variables del form
+// Declarando variables del form de registro
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
-const fbBtn = document.getElementById('fbBtn');
-const btnGoogle = document.getElementById('btnGoogle');
+// Declarando variables del form de sign-in
 const userEmail = document.getElementById('user-name');
 const userPassword = document.getElementById('pass-word');
-const btnLogIn = document.getElementById('log-in');
+const btnSignIn = document.getElementById('sign-in');
 const btnSignOut = document.getElementById('sign-out');
+// Botones de registro con proveedor
+const fbBtn = document.getElementById('fbBtn');
+const btnGoogle = document.getElementById('btnGoogle');
 // Creando usuario con email y contraseña
 const emailSignUp = () => {
   firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
@@ -49,8 +51,20 @@ const validate = () => {
     emailSignUp();
   }
 }
-// Evento de validación y registro
-signUp.addEventListener('click', validate);
+// Sign-in con email y password
+const emailSignIn = () => {
+    // Consiguiendo valor de e-mail y contraseña
+    const email = userEmail.value;
+    const pass = userPassword.value;
+    // const auth = firebase.auth();
+    // Sign in
+    const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
+      // implementar
+      promise.then(user => {
+        console.log(user);
+      })
+      .catch(e => console.log('Usuario no existente, Registrarse'))
+}
 // Sign-in con Facebook
 const fbSignIn = () => {
   // Creando instancia del objeto proveedor de Facebook
@@ -78,8 +92,6 @@ const fbSignIn = () => {
       console.log(error)
     });
 }
-// Evento sign-in con Facebook
-fbBtn.addEventListener('click', fbSignIn)
 // Sign-in con Google
 googleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -97,8 +109,7 @@ googleSignIn = () => {
       // ...
     })
 };
-// Evento sign-in con Google
-btnGoogle.addEventListener('click', googleSignIn);
+
 // Estado del usuario actual
 firebase.auth().onAuthStateChanged(user => {
   // Usuario está logueado
@@ -111,25 +122,21 @@ firebase.auth().onAuthStateChanged(user => {
     console.log(user, 'is signed out');
   }
 });
-// Evento sign-in con correo ya registrado
-btnLogIn.addEventListener('click', e => {
-  // Consiguiendo valor de e-mail y contraseña
-  const email = userEmail.value;
-  const pass = userPassword.value;
-  // const auth = firebase.auth();
-  // Sign in
-  const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
-    // implementar
-    promise.then(result => {
-      console.log(result);
-    })
-    .catch(e => console.log('Usuario no existente, Registrarse'))
-});
+// Sign-out del usuario
+signOut = () => {
+    firebase.auth().signOut().then(() => {
+      console.log('Signed Out');
+    }, (error) => {
+      console.error('Sign Out Error', error);
+    });
+};
+// Evento de validación y registro
+signUp.addEventListener('click', validate);
+// Evento sign-in con correo y contraseña de usuario ya registrado
+btnSignIn.addEventListener('click', emailSignIn);
+// Evento sign-in con Facebook
+fbBtn.addEventListener('click', fbSignIn)
+// Evento sign-in con Google
+btnGoogle.addEventListener('click', googleSignIn);
 // Evento sign-out
-btnSignOut.addEventListener('click', () => {
-  firebase.auth().signOut().then(() => {
-    console.log('Signed Out');
-  }, (error) => {
-    console.error('Sign Out Error', error);
-  });
-});
+btnSignOut.addEventListener('click', signOut);
