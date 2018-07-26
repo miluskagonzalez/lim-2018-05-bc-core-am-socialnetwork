@@ -18,12 +18,14 @@
       <h1>Unidos</h1>
     </div>
     <div>
-      <form id="form-login" class="form-login hide">
+      <form id="form-login" class="form-login no-display">
         <label for="user-email">
           <input id="user-email" type="email" name="user-email" placeholder="Correo electrónico" required/>
+          <span class="tooltip" data-tooltip="Ingresa el correo electrónico con el que te registraste">?</span>
         </label>
         <label for="user-password">
           <input id="user-password" type="password" name="user-password" placeholder="Contraseña" required/>
+          <span class="tooltip" data-tooltip="Tu contraseña debe contener 3 letras, números o signos de puntuación como minimo">?</span>
         </label>
         <button id="sign-in" type="button">Entrar</button>
         <a class="reset-password" href="#">¿Se te olvidó tu contraseña?</a>
@@ -44,14 +46,17 @@
       <!--Formulario de registro con email-->
       <form class="reg-email" id="sign-up-form">
         <h2 class="enter-with-e-mail">Registrarse con e-mail</h2>
-        <label for="username">
+        <label for="username" class="container-input">
           <input type="text" name="username" class="input-form" id="username" placeholder="Nombre de usuario" required />
+          <span class="tooltip" data-tooltip="¿Cómo te llamas?">?</span>
         </label>
-        <label for="email">
+        <label for="email" class="container-input">
           <input type="email" name="email" class="input-form" id="email" placeholder="Correo electrónico" required />
+          <span class="tooltip" data-tooltip="Esta información será de utilidad si alguna vez desea cambiar de contraseña">?</span>
         </label>
-        <label for="password">
+        <label for="password" class="container-input">
           <input type="password" name="password" class="input-form" id="password" placeholder="Nueva contraseña" required />
+          <span class="tooltip" data-tooltip="Las contraseñas deben contener 3 letras, números o signos de puntuación como mínimo">?</span>
         </label>
         <p class="privacy-policy-text">
           Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los

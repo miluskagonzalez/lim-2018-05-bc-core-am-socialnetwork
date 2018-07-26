@@ -115,9 +115,9 @@ firebase.auth().onAuthStateChanged(user => {
   // Usuario está logueado
   console.log(user);
   if (user) {
-    btnSignOut.classList.remove('hide');
+    // btnSignOut.classList.remove('hide');
   } else {
-    btnSignOut.classList.add('hide');
+    // btnSignOut.classList.add('hide');
     // Usuario no está logueado
     console.log(user, 'is signed out');
   }
@@ -139,16 +139,17 @@ fbBtn.addEventListener('click', fbSignIn)
 // Evento sign-in con Google
 btnGoogle.addEventListener('click', googleSignIn);
 // Evento sign-out
-btnSignOut.addEventListener('click', signOut);
+// btnSignOut.addEventListener('click', signOut);
 // Cuando el tamaño de la pantalla cambia, amplia o reduce las opciones de login
 // La propiedad innerWidth tiene una falla de aproximadamente 70 px. 
 // quedaría averiguar si hay otra forma de hacer esta parte, pero por ahora funciona :)
 window.addEventListener('resize', event => {
   if (event.target.innerWidth >= 714) {
-    document.getElementById('button-login-form').classList.add('hide')
-    document.getElementById('form-login').classList.remove('hide')
+    console.log(event.target.innerWidth)
+    document.getElementById('button-login-form').classList.add('no-display')
+    document.getElementById('form-login').classList.remove('no-display')
   } else {
-    document.getElementById('form-login').classList.add('hide')
-    document.getElementById('button-login-form').classList.remove('hide')
+    document.getElementById('form-login').classList.add('no-display')
+    document.getElementById('button-login-form').classList.remove('no-display')
   }
 });
