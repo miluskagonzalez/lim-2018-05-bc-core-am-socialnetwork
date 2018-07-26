@@ -15,8 +15,8 @@ const password = document.getElementById('password');
 const signUp = document.getElementById('sign-up');
 const signUpForm = document.getElementById('sign-up-form');
 // Declarando variables del form de sign-in
-const userEmail = document.getElementById('user-name');
-const userPassword = document.getElementById('pass-word');
+const userEmail = document.getElementById('user-email');
+const userPassword = document.getElementById('user-password');
 const btnSignIn = document.getElementById('sign-in');
 const btnSignOut = document.getElementById('sign-out');
 // Botones de registro con proveedor
@@ -140,3 +140,15 @@ fbBtn.addEventListener('click', fbSignIn)
 btnGoogle.addEventListener('click', googleSignIn);
 // Evento sign-out
 btnSignOut.addEventListener('click', signOut);
+// Cuando el tamaño de la pantalla cambia, amplia o reduce las opciones de login
+// La propiedad innerWidth tiene una falla de aproximadamente 70 px. 
+// quedaría averiguar si hay otra forma de hacer esta parte, pero por ahora funciona :)
+window.addEventListener('resize', event => {
+  if (event.target.innerWidth >= 714) {
+    document.getElementById('button-login-form').classList.add('hide')
+    document.getElementById('form-login').classList.remove('hide')
+  } else {
+    document.getElementById('form-login').classList.add('hide')
+    document.getElementById('button-login-form').classList.remove('hide')
+  }
+});
