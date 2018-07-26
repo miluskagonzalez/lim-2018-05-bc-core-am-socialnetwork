@@ -16,7 +16,7 @@ window.emailSignUp = (name, email, password) => {
       console.log(password);
       //Verificando que se registró el usuario
       console.log('nuevo usuario registrado!');
-      location.href = 'home.html'
+      location.href = 'home.html';
     })
     .catch(error => {
       // Mostrando error en consola
@@ -35,7 +35,7 @@ window.emailSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(user => {
       console.log(user);
-      location.href = 'home.html'
+      location.href = 'home.html';
     })
     .catch(e => console.log('Usuario no existente, Registrarse'))
 }
@@ -53,8 +53,8 @@ window.fbSignIn = () => {
       const user = result.user;
       console.log('user', user);
       // ...
-      alert('Habemus Facebook signin')
-      location.href = 'home.html'
+      alert('Habemus Facebook signin');
+      location.href = 'home.html';
     }).catch(function (error) {
       // Handle Errors here.
       const errorCode = error.code;
@@ -74,7 +74,7 @@ window.googleSignIn = () => {
     .then(result => {
       console.log('Sesion con google');
       console.log(result);
-      location.href = 'home.html'
+      location.href = 'home.html';
     }).catch(error => {
       console.log(error.code);
       console.log(error.message);
@@ -89,7 +89,7 @@ window.googleSignIn = () => {
 window.signOut = () => {
   firebase.auth().signOut().then(() => {
     console.log('Signed Out');
-    location.href = 'index.html'
+    location.href = 'index.html';
   }, (error) => {
     console.error('Sign Out Error', error);
   });

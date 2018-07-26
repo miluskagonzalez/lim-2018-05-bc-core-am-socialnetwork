@@ -40,5 +40,3 @@ window.addEventListener('resize', event => {
     document.getElementById('button-login-form').classList.remove('no-display');
   }
 });
-// Evento sign-out
-//btnSignOut.addEventListener('click', signOut);
