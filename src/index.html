@@ -22,10 +22,16 @@
       <img class="logotipo-heart" src="https://comofuncionaque.com/wp-content/uploads/2015/11/salud-publica1.png" alt="logotipo-corazon">
     </figure>
     <form class="form-login">
+      <div class="container-input">
       <label for="user-name"></label>
       <input id="user-name" type="email" name="username" class="input-form" placeholder="Correo electrónico" required/>
+      <span class="tooltip" data-tooltip="Ingresa el correo electrónico con el que te registraste">?</span>
+      </div>
+      <div class="container-input">
       <label for="pass-word"></label>
       <input id="pass-word" type="password" name="password" class="input-form" placeholder="Contraseña" required/>
+      <span class="tooltip" data-tooltip="Tu contraseña debe contener 3 letras, números o signos de puntuación como minimo">?</span>
+      </div>
       <a class="reset-password" href="#">¿Se te olvidó tu contraseña?</a>
       <button id="sign-in" type="button" class="btn-form">Entrar</button>
     </form>
@@ -54,12 +60,21 @@
     <!--Formulario de registro con email-->
     <form class="reg-email" id="sign-up-form">
       <h2 class="enter-with-e-mail">Registrarse con e-mail</h2>
+      <div class="container-input">
       <label for="username"></label>
       <input type="text" name="username" class="input-form" id="username" placeholder="Nombre de usuario" required />
+      <span class="tooltip" data-tooltip="¿Cómo te llamas?">?</span>
+      </div>
+      <div class="container-input">
       <label for="email"></label>
       <input type="email" name="email" class="input-form" id="email" placeholder="Correo electrónico" required />
+      <span class="tooltip" data-tooltip="Esta información será de utilidad si alguna vez desea cambiar de contraseña">?</span>
+      </div>
+      <div class="container-input">
       <label for="password"></label>
       <input type="password" name="password" class="input-form" id="password" placeholder="Nueva contraseña" required />
+      <span class="tooltip" data-tooltip="Las contraseñas deben contener 3 letras, números o signos de puntuación como mínimo">?</span>
+      </div>
       <div class="sex-selector">
         <input type="radio" name="sex" value="1" class="sex" id="female" required />
         <label for="female">Mujer</label>
