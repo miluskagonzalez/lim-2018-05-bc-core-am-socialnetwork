@@ -44,8 +44,8 @@ const emailSignUp = () => {
 }
 // Validando inputs
 const validate = () => {
-  if (/^\w+([\.-]?\w+)*@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
-    /^[a-zA-Z\d]{6,}$/.test(password.value) &&
+  if (/^[a-zA-Z0-9.ñ_-]+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
+    /^[a-zA-Z0-9.ñ]{6,}$/.test(password.value) &&
     /^[a-z]{3,}$/i.test(username.value)) {
     const name = username.value;
     emailSignUp();
