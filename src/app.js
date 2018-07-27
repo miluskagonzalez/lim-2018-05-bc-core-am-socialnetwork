@@ -15,8 +15,8 @@ const btnGoogle = document.getElementById('btnGoogle');
 // Validando inputs y registrando usuario
 const validate = () => {
   if (/^\w+([\.-]?\w+)*@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
-    /^[a-zA-Z\d]{6,}$/.test(password.value) &&
-    /^[a-z]{3,}$/i.test(username.value)) {
+    /^[ña-zA-Z\d]{6,}$/.test(password.value) &&
+    /^[ña-z ]{2,20}$/i.test(username.value)) {
     emailSignUp(username.value, email.value, password.value);
   }
 }
@@ -28,15 +28,6 @@ btnSignIn.addEventListener('click', () => emailSignIn(userEmail.value, userPassw
 fbBtn.addEventListener('click', fbSignIn)
 // Evento sign-in con Google
 btnGoogle.addEventListener('click', googleSignIn);
-// Cuando el tamaño de la pantalla cambia, amplia o reduce las opciones de login
-// La propiedad innerWidth tiene una falla de aproximadamente 70 px. 
-// quedaría averiguar si hay otra forma de hacer esta parte, pero por ahora funciona :)
-window.addEventListener('resize', event => {
-  if (event.target.innerWidth >= 714) {
-    document.getElementById('button-login-form').classList.add('no-display');
-    document.getElementById('form-login').classList.remove('no-display');
-  } else {
-    document.getElementById('form-login').classList.add('no-display');
-    document.getElementById('button-login-form').classList.remove('no-display');
-  }
-});
+
+
+
