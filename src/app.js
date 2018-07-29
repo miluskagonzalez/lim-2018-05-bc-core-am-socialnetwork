@@ -41,7 +41,7 @@ const emailSignUp = () => {
   signUpForm.reset();
   console.log(name);
   alert(`¡Gracias por registrarte ${name}!`);
-}
+};
 // Validando inputs
 const validate = () => {
   if (/^[a-zA-Z0-9.ñ_-]+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
@@ -49,8 +49,8 @@ const validate = () => {
     /^[a-z ñ]{3,}$/i.test(username.value)) {
     const name = username.value;
     emailSignUp();
-  }
-}
+  };
+};
 // Sign-in con email y password
 const emailSignIn = () => {
     // Consiguiendo valor de e-mail y contraseña
