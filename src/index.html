@@ -4,79 +4,67 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/x-icon" href="http://nicotinell.es/content/img/beneficios-dejar-de-fumar-salud-fisica-1.png">
-  <title>Social Network</title>
+  <!--Optimizado para mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!--CSS Materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto+Condensed" rel="stylesheet">
+  <title>Social Network</title>
 </head>
 
 <body>
-  <!--Encabezado-->
-  <header class="rgba-header">
-    <div>
-      <h1>Unidos</h1>
-    </div>
-    <div>
-      <form id="form-login" class="form-login no-display">
-        <label for="user-email">
-          <input id="user-email" type="email" name="user-email" placeholder="Correo electrónico" required/>
-          <span class="tooltip" data-tooltip="Ingresa el correo electrónico con el que te registraste">?</span>
-        </label>
-        <label for="user-password">
-          <input id="user-password" type="password" name="user-password" placeholder="Contraseña" required/>
-          <span class="tooltip" data-tooltip="Tu contraseña debe contener 3 letras, números o signos de puntuación como minimo">?</span>
-        </label>
-        <button id="sign-in" type="button">Entrar</button>
-        <a class="reset-password" href="#">¿Se te olvidó tu contraseña?</a>
-      </form>
-      <button id="button-login-form" type="button">Entrar</button>
-    </div>
-  </header>
-  <!--Contenido principal-->
-  <main>
-    <section class="grid">
-      <figure class="container-logo">
-        <img class="logotipo-heart" src="https://comofuncionaque.com/wp-content/uploads/2015/11/salud-publica1.png" alt="logotipo-corazon">
-      </figure>
-      <h2 class="enter-with-networks">¡Ahora puedes registrarte con Google, Facebook o Whatsapp!</h2>
-      <p class="text-networks">Conectarse con cualquiera de ellos es rápido y fácil, y podrás ver cuáles de sus amigos ya están usando UNIDOS.</p>
-    </section>
-    <section>
-      <!--Formulario de registro con email-->
-      <form class="reg-email" id="sign-up-form">
-        <h2 class="enter-with-e-mail">Registrarse con e-mail</h2>
-        <label for="username" class="container-input">
-          <input type="text" name="username" class="input-form" id="username" placeholder="Nombre de usuario" required />
-          <span class="tooltip" data-tooltip="¿Cómo te llamas?">?</span>
-        </label>
-        <label for="email" class="container-input">
-          <input type="email" name="email" class="input-form" id="email" placeholder="Correo electrónico" required />
-          <span class="tooltip" data-tooltip="Esta información será de utilidad si alguna vez desea cambiar de contraseña">?</span>
-        </label>
-        <label for="password" class="container-input">
-          <input type="password" name="password" class="input-form" id="password" placeholder="Nueva contraseña" required />
-          <span class="tooltip" data-tooltip="Las contraseñas deben contener 3 letras, números o signos de puntuación como mínimo">?</span>
-        </label>
-        <p class="privacy-policy-text">
-          Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los
-          <a href="#"> Términos y las políticas de privacidad</a>
-        </p>
-        <!--Botón de registro con email-->
-        <button class="btn-form" type="button" name="sign-up" id="sign-up">Registrarse</button>
-        <!--Botón de log-in con Google-->
-        <img id="btnGoogle" class="register-button btn-google" src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google">
-        <!--Botón de log-in con Facebook-->
-        <img id="fbBtn" class="register-button btn-facebook" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook">
-        <img class="register-button btn-whatsapp" src="https://www.freeiconspng.com/uploads/logo-whatsapp-png-transparent-background-8.png"
-          alt="Whatsapp">
-      </form>
-    </section>
-  </main>
+  <h1>Unidos</h1>
+  <!--Formulario de inicio de sesión con email-->
+  <form id="form-login">
+    <label for="user-email"></label>
+    <input id="user-email" type="email" name="user-email" placeholder="Correo electrónico" required/>
+    <span data-content="Ingresa el correo electrónico con el que te registraste"></span>
+    <label for="user-password"></label>
+    <input id="user-password" type="password" name="user-password" placeholder="Contraseña" required/>
+    <span data-content="Tu contraseña debe contener 3 letras, números o signos de puntuación como minimo"></span>
+    <button id="sign-in" type="button" class="btn">Inicia sesión</button>
+    <a href="#">¿Olvidaste tu contraseña?</a>
+  </form>
+  <!--Formulario de registro con email-->
+  <form id="sign-up-form">
+    <label for="username"></label>
+    <input type="text" name="username" id="username" placeholder="Nombre de usuario" required />
+    <span data-content="¿Cómo te llamas?"></span>
+
+    <label for="email"></label>
+    <input type="email" name="email" id="email" placeholder="Correo electrónico" required />
+    <span data-tooltip="Esta información será de utilidad si alguna vez desea cambiar de contraseña"></span>
+
+    <label for="password"></label>
+    <input type="password" name="password" id="password" placeholder="Nueva contraseña" required />
+    <span data-tooltip="Las contraseñas deben contener 3 letras, números o signos de puntuación como mínimo"></span>
+
+    <p>
+      Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los
+      <a href="#"> Términos y las políticas de privacidad</a>
+    </p>
+    <!--Botón de registro con email-->
+    <button class="btn" type="button" name="sign-up" id="sign-up">Registrarse</button>
+    <!--Botón de log-in con Google-->
+    <button class="btn-floating red">
+      <i class="fab fa-google white-text" id="btnGoogle"></i>
+    </button>
+    <!--Botón de log-in con Facebook-->
+    <button class="btn-floating blue">
+      <i class="fab fa-facebook-f" id="fbBtn"></i>
+    </button>
+  </form>
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="firebase.js"></script>
   <script src="app.js"></script>
+  <!--JS Materialize-->
+  <script type="text/javascript" src="materialize.js"></script>
 </body>
 
 </html>
