@@ -11,7 +11,6 @@ const btnSignIn = document.getElementById('sign-in');
 // Botones de registro con proveedor
 const fbBtn = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
-
 // Validando inputs y registrando usuario
 const validate = () => {
   if (/^\w+([\.-]?\w+)*@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
@@ -28,6 +27,3 @@ btnSignIn.addEventListener('click', () => emailSignIn(userEmail.value, userPassw
 fbBtn.addEventListener('click', fbSignIn)
 // Evento sign-in con Google
 btnGoogle.addEventListener('click', googleSignIn);
-
-
-
