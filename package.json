@@ -1,0 +1,26 @@
+{
+  "name": "lim-2018-05-bc-core-am-socialnetwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork/issues"
+  },
+  "homepage": "https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork#readme"
+}

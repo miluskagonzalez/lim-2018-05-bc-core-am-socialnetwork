@@ -8,7 +8,6 @@ const config = {
   messagingSenderId: "628278045322"
 };
 firebase.initializeApp(config);
-
 // Creando usuario con email y contraseña
 window.emailSignUp = (name, email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
