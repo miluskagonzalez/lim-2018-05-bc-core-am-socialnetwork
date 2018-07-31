@@ -16,7 +16,7 @@ window.emailSignUp = (name, email, password) => {
       console.log(password);
       //Verificando que se registró el usuario
       console.log('nuevo usuario registrado!');
-      location.href = 'home.html';
+      location.href = 'home.html'; //Establece el valor de href para que apunte a otro sitio web
     })
     .catch(error => {
       // Mostrando error en consola
@@ -98,7 +98,10 @@ window.signOut = () => {
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     // Usuario está logueado
-  console.log(user);
+    const displayName = user.displayName;
+    const userPhoto = user.pothoURL;
+    const userEmail = user.email;
+    console.log(user);
   } else {
     // Usuario no está logueado
     console.log(user, 'is signed out');

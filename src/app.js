@@ -14,12 +14,13 @@ const btnGoogle = document.getElementById('btnGoogle');
 
 // Validando inputs y registrando usuario
 const validate = () => {
-  if (/^\w+([\.-]?\w+)*@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) &&
-    /^[ña-zA-Z\d]{6,}$/.test(password.value) &&
-    /^[ña-z ]{2,30}$/i.test(username.value)) {
-    emailSignUp(username.value, email.value, password.value);
-  }
-}
+  if (/^[a-zA-Z0-9._-]+@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/.test(email.value) && //El método test() prueba una coincidencia en una cadena y devuelve verdadero si encuentra una coincidencia.
+    /^[a-zA-Z0-9.ñ]{6,}$/.test(password.value) &&
+    /^[a-z ñ]{3,}$/i.test(username.value)) {
+    const name = username.value;
+    emailSignUp();
+  };
+};  
 // Evento de validación y registro
 signUp.addEventListener('click', validate);
 // Evento sign-in con correo y contraseña de usuario ya registrado
