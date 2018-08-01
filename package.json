@@ -1,26 +1,17 @@
 {
-  "name": "lim-2018-05-bc-core-am-socialnetwork",
+  "name": "red-social",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "^5.2.0"
-  },
+  "repository": "https://github.com/Florball/lim-2018-05-bc-core-am-socialnetwork.git",
+  "author": "Flor Ballinas",
+  "license": "MIT",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork/issues"
-  },
-  "homepage": "https://github.com/miluskagonzalez/lim-2018-05-bc-core-am-socialnetwork#readme"
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "jest": "^23.4.2"
+  }
 }
