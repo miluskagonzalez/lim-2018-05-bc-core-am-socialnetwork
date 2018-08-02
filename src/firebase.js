@@ -1,23 +1,26 @@
 // Inicializando Firebase
 const config = {
-  apiKey: "AIzaSyDebuWMYcGSWAk5x7YGxciGKStz56KOHlY",
-  authDomain: "social-network-salud.firebaseapp.com",
-  databaseURL: "https://social-network-salud.firebaseio.com",
-  projectId: "social-network-salud",
-  storageBucket: "social-network-salud.appspot.com",
-  messagingSenderId: "628278045322"
+  apiKey: 'AIzaSyDebuWMYcGSWAk5x7YGxciGKStz56KOHlY',
+  authDomain: 'social-network-salud.firebaseapp.com',
+  databaseURL: 'https://social-network-salud.firebaseio.com',
+  projectId: 'social-network-salud',
+  storageBucket: 'social-network-salud.appspot.com',
+  messagingSenderId: '628278045322',
 };
 firebase.initializeApp(config);
+
 // Creando usuario con email y contraseña
-window.emailSignUp = (name, email, password) => {
+window.emailSignUp = (name, email, password, form) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(user => {
+    .then((user) => {
+      console.log(user);
       console.log(password);
-      //Verificando que se registró el usuario
+
+      // Consoleando que se registró el usuario
       console.log('nuevo usuario registrado!');
-      location.href = 'home.html'; //Establece el valor de href para que apunte a otro sitio web
+      window.location.href = 'home.html';
     })
-    .catch(error => {
+    .catch((error) => {
       // Mostrando error en consola
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -25,81 +28,78 @@ window.emailSignUp = (name, email, password) => {
       console.log(password.value);
     });
   // reset() limpia el form
-  signUpForm.reset();
+  form.reset();
   console.log(name);
   alert(`¡Gracias por registrarte ${name}!`);
-}
+};
+
 // Sign-in con email y password
 window.emailSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(user => {
+    .then((user) => {
       console.log(user);
-      location.href = 'home.html';
+      window.location.href = 'home.html';
     })
-    .catch(e => console.log('Usuario no existente, Registrarse'))
-}
+    .catch((error) => {
+      console.log('Usuario no existente, Registrarse');
+      console.log(error);
+    });
+};
+
 // Sign-in con Facebook
 window.fbSignIn = () => {
   // Creando instancia del objeto proveedor de Facebook
   const fbProvider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(fbProvider)
-    .then(result => {
+    .then((result) => {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       console.log('result', result);
       const token = result.credential.accessToken;
       console.log('token', token);
       // The signed-in user info.
-      const user = result.user;
+      const { user } = result;
       console.log('user', user);
-      // ...
       alert('Habemus Facebook signin');
-      location.href = 'home.html';
-    }).catch(function (error) {
+      window.location.href = 'home.html';
+    }).catch((error) => {
       // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      const credential = error.credential;
-      // ...
-      console.log(error);
+      const {
+        code, message, email, credential,
+      } = error;
+      console.log(code, message, email, credential);
     });
 };
+
 // Sign-in con Google
 window.googleSignIn = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
-    .then(result => {
-      console.log('Sesion con google');
-      console.log(result);
-      location.href = 'home.html';
-    }).catch(error => {
-      console.log(error.code);
-      console.log(error.message);
-      // The email of the user's account used.
-      console.log(error.email);
-      // The firebase.auth.AuthCredential type that was used.
-      console.log(error.credential);
-      // ...
-    })
+    .then((result) => {
+      console.log('Sesion con google', result);
+      window.location.href = 'home.html';
+    }).catch((error) => {
+      const {
+        code, message, mail, credential,
+      } = error;
+      console.log(code, message, mail, credential);
+    });
 };
+
 // Sign-out del usuario
 window.signOut = () => {
-  firebase.auth().signOut().then(() => {
-    console.log('Signed Out');
-    location.href = 'index.html';
-  }, (error) => {
-    console.error('Sign Out Error', error);
-  });
+  firebase.auth().signOut()
+    .then((user) => {
+      console.log('Signed Out', user);
+      window.location.href = 'index.html';
+    }).catch((error) => {
+      console.error('Sign Out Error', error);
+    });
 };
+
 // Estado del usuario actual
-firebase.auth().onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // Usuario está logueado
-    const displayName = user.displayName;
-    const userPhoto = user.pothoURL;
-    const userEmail = user.email;
     console.log(user);
   } else {
     // Usuario no está logueado
