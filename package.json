@@ -6,13 +6,13 @@
   "author": "Miluska Gonzalez",
   "license": "MIT",
   "scripts": {
-    "htmlhint": "htmlhint src/*.html test/*.html",
+    "htmlhint": "htmlhint src/*.html",
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "yarn run eslint && yarn run htmlhint",
     "test": "jest --coverage"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
+    "eslint": "^4",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "htmlhint": "^0.9.13",

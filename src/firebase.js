@@ -63,7 +63,9 @@ window.fbSignIn = () => {
       window.location.href = 'home.html';
     }).catch((error) => {
       // Handle Errors here.
-      const { code, message, email, credential } = error;
+      const {
+        code, message, email, credential,
+      } = error;
       console.log(code, message, email, credential);
     });
 };
@@ -76,7 +78,9 @@ window.googleSignIn = () => {
       console.log('Sesion con google', result);
       window.location.href = 'home.html';
     }).catch((error) => {
-      const { code, message, mail, credential } = error;
+      const {
+        code, message, mail, credential,
+      } = error;
       console.log(code, message, mail, credential);
     });
 };
