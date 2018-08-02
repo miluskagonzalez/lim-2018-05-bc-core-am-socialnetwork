@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Ícono -->
+  <link rel="icon" type="image/x-icon" href="http://starme.mx/icons/Nueva%20carpeta/Categor%C3%ADas/11.Salud-icono.png" />
   <!--Optimizado para mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--Google Icon Font-->
@@ -18,15 +20,38 @@
 </head>
 
 <body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+          <ul id="slide-out" class="sidenav">
+              <li><div class="user-view">
+                <div class="background">
+                  <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
+                </div>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </div></li>
+              <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+              <li><a href="#!">Second Link</a></li>
+              <li><div class="divider"></div></li>
+              <li><a class="subheader">Subheader</a></li>
+              <button type="button" id="sign-out"></button>
+              <a id="sign-out" class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>Cerrar Sesión</a>
+            </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">all_inclusive</i></a>
+      </div>
+    </nav>
+  </div>
+
   <div>
-    <button type="button" id="sign-out">Cerrar Sesión</button>
-    <h2 id="welcome-name" class="welcome">Bienvenido(a)</h2>
+    <!-- <button type="button" id="sign-out">Cerrar Sesión</button> -->
   </div>
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   <script src="firebase.js"></script>
   <!--Materialize-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <script src="materialize.js"></script>
   <!--DOM-->
   <script src="home.js"></script>
 </body>

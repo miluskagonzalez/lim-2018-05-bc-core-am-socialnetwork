@@ -17,7 +17,6 @@ const btnSignIn = document.getElementById('sign-in');
 // Botones de registro con proveedor
 const fbBtn = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
-
 // Evento de validación y registro
 signUp.addEventListener('click', validate(username.value, password.value, email.value, signUpForm));
 // Evento sign-in con correo y contraseña de usuario ya registrado
