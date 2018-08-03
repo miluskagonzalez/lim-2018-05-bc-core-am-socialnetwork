@@ -1,3 +1,45 @@
+/* home */
+/* margen para logo */
+.logo-margin-left {
+  margin-left: 4%;
+}
+
+/* ancho de barra lateral */
+.width-collection {
+  width: 20%;
+}
+
+/* textarea para postear y contenedor de post*/
+.content-post {
+  margin: auto;
+  margin-top: 5%;
+  padding-left: 3%;
+  padding-bottom: 0;
+  padding-top: 3%;
+}
+
+/* foto de perfil o icono */
+.size-photo {
+  margin: 1.5%;
+  width: 20%;
+}
+
+/* ancho de sidenav */
+.width-col {
+  width: 24%;
+}
+
+/* alineado en una sola fila */
+.lined-row {
+  display: inline-block;
+}
+
+/* margen izquierdo */
+.general-margin-left {
+  margin-left: 14%;
+}
+
+/* Colores */
 .deep-koamaru {
   color: #222D66 !important;
 }
@@ -14,10 +56,12 @@
   color: #F6C937 !important;
 }
 
+/* negrita */
 .bold-text {
   font-weight: 700;
 }
 
+/* evitar scroll */
 .tabs {
   overflow-x: hidden;
 }
