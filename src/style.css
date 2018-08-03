@@ -3,10 +3,12 @@
 .logo-margin-left {
   margin-left: 4%;
 }
+
 /* ancho de barra lateral */
 .width-collection {
   width: 20%;
 }
+
 /* textarea para postear y contenedor de post*/
 .content-post {
   margin: auto;
@@ -15,20 +17,67 @@
   padding-bottom: 0;
   padding-top: 3%;
 }
+
 /* foto de perfil o icono */
 .size-photo {
   margin: 1.5%;
   width: 20%;
 }
+
 /* ancho de sidenav */
 .width-col {
   width: 24%;
 }
+
 /* alineado en una sola fila */
 .lined-row {
   display: inline-block;
 }
+
 /* margen izquierdo */
 .general-margin-left {
   margin-left: 14%;
+}
+
+/* Colores */
+.deep-koamaru {
+  color: #222D66 !important;
+}
+
+.eucalyptus {
+  color: #40D1A4 !important;
+}
+
+.pale-robin-egg-blue {
+  color: #A4D4D1 !important;
+}
+
+.saffron {
+  color: #F6C937 !important;
+}
+
+/* negrita */
+.bold-text {
+  font-weight: 700;
+}
+
+/* evitar scroll */
+.tabs {
+  overflow-x: hidden;
+}
+
+.tabs .indicator {
+  background-color: #40D1A4;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background: transparent;
+}
+
+.image-background {
+  background-image: url(assets/images/smiling-woman-with-cellphone.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 1000px;
 }
