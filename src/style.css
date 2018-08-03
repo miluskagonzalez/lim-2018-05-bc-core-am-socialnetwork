@@ -1,0 +1,39 @@
+.deep-koamaru {
+  color: #222D66 !important;
+}
+
+.eucalyptus {
+  color: #40D1A4 !important;
+}
+
+.pale-robin-egg-blue {
+  color: #A4D4D1 !important;
+}
+
+.saffron {
+  color: #F6C937 !important;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.tabs {
+  overflow-x: hidden;
+}
+
+.tabs .indicator {
+  background-color: #40D1A4;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+  background: transparent;
+}
+
+.image-background {
+  background-image: url(assets/images/smiling-woman-with-cellphone.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 1000px;
+}
