@@ -1,18 +1,34 @@
 /* home */
-/* logo de nav */
-.margin-logo {
-  margin-left: 3%;
-}
-/* contenedor de textarea post*/
-.content-post {
-  margin: auto;
-  margin-top: 3%;
-  padding: 2%;
-  padding-bottom: 0;
-  padding-right: 0.2%;
+/* margen para logo */
+.logo-margin-left {
+  margin-left: 4%;
 }
 /* ancho de barra lateral */
 .width-collection {
   width: 20%;
 }
-/* tamaño de foto de perfil o icono */
+/* textarea para postear y contenedor de post*/
+.content-post {
+  margin: auto;
+  margin-top: 5%;
+  padding-left: 3%;
+  padding-bottom: 0;
+  padding-top: 3%;
+}
+/* foto de perfil o icono */
+.size-photo {
+  margin: 1.5%;
+  width: 20%;
+}
+/* ancho de sidenav */
+.width-col {
+  width: 24%;
+}
+/* alineado en una sola fila */
+.lined-row {
+  display: inline-block;
+}
+/* margen izquierdo */
+.general-margin-left {
+  margin-left: 14%;
+}
