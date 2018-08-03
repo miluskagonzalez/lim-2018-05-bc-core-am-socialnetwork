@@ -23,28 +23,53 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-          <ul id="slide-out" class="sidenav">
-              <li><div class="user-view">
-                <div class="background">
-                  <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
-                </div>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-              </div></li>
-              <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-              <li><a href="#!">Second Link</a></li>
-              <li><div class="divider"></div></li>
-              <li><a class="subheader">Subheader</a></li>
-              <button type="button" id="sign-out"></button>
-              <a id="sign-out" class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>Cerrar Sesión</a>
-            </ul>
-        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">all_inclusive</i></a>
+        <i class="material-icons hide-on-med-and-down margin-logo">all_inclusive</i>
+        <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons">all_inclusive</i></a>
       </div>
     </nav>
   </div>
-
-  <div>
-    <!-- <button type="button" id="sign-out">Cerrar Sesión</button> -->
+  <div class="hide-on-large-only">
+    <ul id="slide-out" class="sidenav">
+      <li><div class="user-view">
+        <div class="background">
+          <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
+        </div>
+        <a href="#name"><span class="name">John Doe</span></a>
+        <div class="divider"></div>
+        <a href="#email"><span class="email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><div class="divider"></div></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a id="sign-out" class="waves-effect waves-light btn-smallr">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+  <div class="hide-on-med-and-down">
+    <ul class="collection white width-collection">
+      <li><div class="user-view">
+        <div class="background">
+          <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
+        </div>
+        <a href="#name"><span class="name">John Doe</span></a>
+        <div class="divider"></div>
+        <a href="#email"><span class="email">jdandturk@gmail.com</span></a>
+      </div></li>
+      <li><div class="divider"></div></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><div class="divider"></div></li>
+      <li><a id="sign-out" class="waves-effect waves-light btn-smallr">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+  <div class="row card container content-post">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s11">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+          <label for="icon_prefix2">Publicar</label>
+        </div>
+      </div>
+    </form>
   </div>
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
