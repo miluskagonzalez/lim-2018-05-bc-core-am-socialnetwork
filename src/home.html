@@ -20,56 +20,61 @@
 </head>
 
 <body>
+  <!-- Barra de navegacion -->
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <i class="material-icons hide-on-med-and-down margin-logo">all_inclusive</i>
-        <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons">all_inclusive</i></a>
+      <div class="nav-wrapper logo-margin-left">
+        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons brand-logo">all_inclusive</i></a>
       </div>
     </nav>
   </div>
-  <div class="hide-on-large-only">
-    <ul id="slide-out" class="sidenav">
+  <!-- Sidenav -->
+  <div class="fixed">
+    <ul id="slide-out" class="sidenav fixed">
       <li><div class="user-view">
         <div class="background">
-          <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
+          <img src="https://i.pinimg.com/originals/8a/c5/a1/8ac5a189fc1da03131d10b6cdb9a62d1.jpg">
         </div>
-        <a href="#name"><span class="name">John Doe</span></a>
-        <div class="divider"></div>
-        <a href="#email"><span class="email">jdandturk@gmail.com</span></a>
+        <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
+        <a href="#name"><span class="name white-text">John Doe</span></a>
+        <a href="#email"><span class="email white-text">jdandturk@gmail.com</span></a>
       </div></li>
-      <li><div class="divider"></div></li>
-      <li><a href="#!">Second Link</a></li>
-      <li><div class="divider"></div></li>
-      <li><a id="sign-out" class="waves-effect waves-light btn-smallr">Cerrar Sesión</a></li>
+      <li><a href="#!">Link</a></li>
+      <div class="divider"></div>
+      <li><a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a></li>
     </ul>
   </div>
-  <div class="hide-on-med-and-down">
-    <ul class="collection white width-collection">
-      <li><div class="user-view">
-        <div class="background">
-          <img class="circle" src="http://debian.org.es/img/anonymous.jpg">
-        </div>
-        <a href="#name"><span class="name">John Doe</span></a>
-        <div class="divider"></div>
-        <a href="#email"><span class="email">jdandturk@gmail.com</span></a>
-      </div></li>
-      <li><div class="divider"></div></li>
-      <li><a href="#!">Second Link</a></li>
-      <li><div class="divider"></div></li>
-      <li><a id="sign-out" class="waves-effect waves-light btn-smallr">Cerrar Sesión</a></li>
-    </ul>
-  </div>
+  <!-- Contenedor para postear -->
   <div class="row card container content-post">
     <form class="col s12">
       <div class="row">
         <div class="input-field col s11">
           <i class="material-icons prefix">mode_edit</i>
           <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">Publicar</label>
+          <label for="icon_prefix2">Escribir...</label>
+          <div class="right"><a class="waves-effect waves-light btn-small logo-margin-left">Publicar</a></div>
+          <!-- Desplegable de privacidad -->
+          <div class="right-align">
+            <a class='waves-effect waves-light btn-small' href='#' data-target='dropdown1'>Privacidad <i class="material-icons">keyboard_arrow_down</i></a>
+            <!-- Estructura de desplegable -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="#!"><i class="material-icons">public</i>Público</a></li>
+              <div class="divider"></div>
+              <li><a href="#!"><i class="material-icons">lock_outline</i>Privado</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </form>
+  </div>
+  <!-- Contenedor de publicacion -->
+  <div class="row card container content-post">
+    <p class="col s12">¡Hola! Soy un post!</p>  
+    <div class="right"><a class="waves-effect waves-light btn-small general-margin-left">Eliminar</a></div>
+    <div class="right"><a class="waves-effect waves-light btn-small">Editar</a></div>
+    <div class="lined-row"><i class="material-icons">favorite_border</i>
+      <p class="lined-row">Like</p> 
+    </div>
   </div>
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
