@@ -1,0 +1,18 @@
+/* home */
+/* logo de nav */
+.margin-logo {
+  margin-left: 3%;
+}
+/* contenedor de textarea post*/
+.content-post {
+  margin: auto;
+  margin-top: 3%;
+  padding: 2%;
+  padding-bottom: 0;
+  padding-right: 0.2%;
+}
+/* ancho de barra lateral */
+.width-collection {
+  width: 20%;
+}
+/* tamaño de foto de perfil o icono */
