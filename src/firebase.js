@@ -106,3 +106,6 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log(user, 'is signed out');
   }
 });
+
+// CRUD
+
