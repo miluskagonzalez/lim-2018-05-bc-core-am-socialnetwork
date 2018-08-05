@@ -4,6 +4,8 @@ UNID∞S es una red social de salud, pensada en los usuarios que requieren de la
 
 En muchas ocaciones las personas no tienen los recursos para buscar ayuda profesional, o simplemente prefieren obtener una recomendación antes de elegir a su médico. Esto hace que las redes sociales sean un excelente lugar para crear comunidades y que así las personaLas personas día a día puedan resolver sus preocupaciones en torno a la salud mediante esta. Nadie debe enfrentar desafíos de salud solo, ya sea que esté manejando una condición seria, trabajando para mejorar su bienestar o cuidando a un ser querido, contará con apoyo para buscar respuestas por medio de está red. 
 
+***
+
 ## Principales usuarios del producto
 
 Buscando a nuestro público objetivo nos dimos cuenta que en la actualidad muchas personas "adultas", recurren a Internet para buscar respuestas sobre afecciones médicas, la demanda y la urgencia de obtener información en una comunidad se hace necesaria. Por lo tanto nuestro público objetvo son las personas mayores de 18 años.
@@ -23,6 +25,8 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 * Salir del propio aislamiento
 * Organización de actividades sociales
 
+***
+
 ## Características de nuestra Red Social UNID∞S
 
 * Cómo descubriste las necesidades de los usuarios.
@@ -34,7 +38,7 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 
 ## Moodboard
 
-![Moodboard]{https://ibb.co/c9npAe}
+![Moodboard](ttps://ibb.co/c9npAe)
 
 ## Benchmark de Redes Sociales 
 
@@ -46,7 +50,11 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 | **Digital Healthcare** | ✔ | ✔ | ✔ |  |  |  |
 | **Facebook** | ✔ |  | ✔ | ✔ |  |  |
 
-##
+## Primer prototipo móvil de alta fidelidad
+
+![Marvel](https://ibb.co/eyMwOz) ![marvel](https://ibb.co/dPQqiz)
+
+[Prototipo movil de alta](https://marvelapp.com/e2b3f54/screen/45795042)
 
 
   
