@@ -5,7 +5,7 @@ const config = {
   databaseURL: 'https://social-network-salud.firebaseio.com',
   projectId: 'social-network-salud',
   storageBucket: 'social-network-salud.appspot.com',
-  messagingSenderId: '628278045322'
+  messagingSenderId: '628278045322',
 };
 firebase.initializeApp(config);
 
