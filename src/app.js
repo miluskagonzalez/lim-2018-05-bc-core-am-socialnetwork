@@ -96,7 +96,17 @@ btnSignUp.addEventListener('click', () => {
   }
 });
 // Evento sign-in con correo y contraseña de usuario ya registrado
-btnSignIn.addEventListener('click', () => emailSignIn(userEmail.value, userPassword.value));
+btnSignIn.addEventListener('click', () => {
+  emailSignIn(userEmail.value, userPassword.value)
+    .then((user) => {
+      console.log(user);
+      window.location.href = 'home.html';
+    })
+    .catch((error) => {
+      console.log('Usuario no existente, Registrarse');
+      console.log(error);
+    });
+});
 // Evento sign-in con Facebook
 btnFb.addEventListener('click', fbSignIn);
 // Evento sign-in con Google

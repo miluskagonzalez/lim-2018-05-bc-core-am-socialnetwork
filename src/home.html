@@ -42,6 +42,7 @@
       <li><a href="#!">Link</a></li>
       <div class="divider"></div>
       <li><a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a></li>
+      <div class="divider"></div>
     </ul>
   </div>
   <!-- Contenedor para postear -->
@@ -52,32 +53,37 @@
           <i class="material-icons prefix">mode_edit</i>
           <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
           <label for="icon_prefix2">Escribir...</label>
-          <div class="right"><a class="waves-effect waves-light btn-small logo-margin-left">Publicar</a></div>
-          <!-- Desplegable de privacidad -->
-          <div class="right-align">
-            <a class='waves-effect waves-light btn-small' href='#' data-target='dropdown1'>Privacidad <i class="material-icons">keyboard_arrow_down</i></a>
-            <!-- Estructura de desplegable -->
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="#!"><i class="material-icons">public</i>Público</a></li>
-              <div class="divider"></div>
-              <li><a href="#!"><i class="material-icons">lock_outline</i>Privado</a></li>
-            </ul>
-          </div>
         </div>
+        <div class="general-margin-right">
+          <div id="btn-to-post" class="right"><a class="waves-effect waves-light btn-small general-margin-left">Publicar</a></div>
+          <!-- Desplegable de privacidad -->
+          <div class="right-align"><a class='waves-effect waves-light btn-small' href='#' data-target='dropdown1'>Privacidad <i class="material-icons">keyboard_arrow_down</i></a></div>
+          <!-- Estructura de desplegable -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!"><i class="material-icons">public</i>Público</a></li>
+            <div class="divider"></div>
+            <li><a href="#!"><i class="material-icons">lock_outline</i>Privado</a></li>
+          </ul>
+        </div>  
       </div>
     </form>
   </div>
   <!-- Contenedor de publicacion -->
   <div class="row card container content-post">
-    <p class="col s12">¡Hola! Soy un post!</p>  
-    <div class="right"><a class="waves-effect waves-light btn-small general-margin-left">Eliminar</a></div>
-    <div class="right"><a class="waves-effect waves-light btn-small">Editar</a></div>
-    <div class="lined-row"><i class="material-icons">favorite_border</i>
-      <p class="lined-row">Like</p> 
+    <p id="published">¡Hola! Soy un post!</p> 
+    <div class="general-margin-right">
+      <div class="right"><a class="waves-effect waves-light btn-small general-margin-left">Eliminar</a></div>
+      <div class="right"><a class="waves-effect waves-light btn-small">Editar</a></div>
     </div>
+    <div class="lined-row"><i class="material-icons">favorite_border</i>
+    <p class="lined-row">Like</p></div> 
   </div>
+  
   <!--Firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <!-- Firestore -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
   <script src="firebase.js"></script>
   <!--Materialize-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
@@ -85,5 +91,4 @@
   <!--DOM-->
   <script src="home.js"></script>
 </body>
-
 </html>
