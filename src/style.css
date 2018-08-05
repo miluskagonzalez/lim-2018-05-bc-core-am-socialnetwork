@@ -39,6 +39,11 @@
   margin-left: 14%;
 }
 
+/* margen derecho */
+.general-margin-right {
+  margin-right: 9%;
+}
+
 /* Colores */
 .deep-koamaru {
   color: #222D66 !important;
