@@ -8,31 +8,9 @@ const config = {
   messagingSenderId: '628278045322',
 };
 firebase.initializeApp(config);
-
+const auth = firebase.auth();
 // Creando usuario con email y contraseña
-window.emailSignUp = (name, email, password, form) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      console.log(user);
-      console.log(password);
-
-      // Consoleando que se registró el usuario
-      console.log('nuevo usuario registrado!');
-      window.location.href = 'home.html';
-    })
-    .catch((error) => {
-      // Mostrando error en consola
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-      console.log(password.value);
-    });
-  // reset() limpia el form
-  form.reset();
-  console.log(name);
-  alert(`¡Gracias por registrarte ${name}!`);
-};
-
+window.emailSignUp = (email, password) => auth.createUserWithEmailAndPassword(email, password);
 // Sign-in con email y password
 window.emailSignIn = (email, password) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
@@ -100,7 +78,7 @@ window.signOut = () => {
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // Usuario está logueado
-    console.log(user);
+    console.log(user, 'is logged in');
   } else {
     // Usuario no está logueado
     console.log(user, 'is signed out');
