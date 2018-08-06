@@ -87,14 +87,16 @@ btnSignUp.addEventListener('click', () => {
     && validateEmail(email.value)
     && validatePassword(password.value)) {
     emailSignUp(email.value, password.value)
-      .then((result) => {
-        const { user } = result;
-        user.updateProfile({
+      .then((user) => {
+        console.log(user)
+        user.user.updateProfile({
           displayName: username.value,
         })
+        window.location.href = 'home.html';
       })
       .then((user)=> {
-        window.location.href = 'home.html';
+        console.log(user)
+        
       })
       .catch((error) => {
         console.log(error);

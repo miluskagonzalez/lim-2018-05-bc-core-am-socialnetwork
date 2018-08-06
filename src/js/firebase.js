@@ -9,7 +9,8 @@ const config = {
 };
 firebase.initializeApp(config);
 const auth = firebase.auth();
-const firestore = firebase.firestore();
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true });
 // Creando usuario con email y contraseña
 window.emailSignUp = (email, password) => auth.createUserWithEmailAndPassword(email, password);
 // Sign-in con email y password
@@ -52,22 +53,14 @@ window.googleSignIn = () => {
     });
 };
 // Sign-out del usuario
-window.signOut = () => {
-  auth.signOut()
-    .then((user) => {
-      console.log('Signed Out', user);
-      window.location.href = 'index.html';
-    }).catch((error) => {
-      console.error('Sign Out Error', error);
-    });
-};
+window.signOut = () => auth.signOut();
 
 // Estado del usuario actual
 auth.onAuthStateChanged((user) => {
   if (user) {
     // Usuario está logueado
     console.log(user, 'is logged in');
-    firestore.doc(`users/${user.uid}`).set({
+    db.doc(`users/${user.uid}`).set({
     username: user.displayName,
     email: user.email,
     })
