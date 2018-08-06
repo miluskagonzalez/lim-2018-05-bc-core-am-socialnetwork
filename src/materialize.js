@@ -1,2 +1,2 @@
-/* M is global */
+/* global M */
 M.AutoInit();
