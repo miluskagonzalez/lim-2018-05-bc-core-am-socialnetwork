@@ -28,15 +28,6 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 
 ***
 
-## Características de nuestra Red Social UNID∞S
-
-* Cómo descubriste las necesidades de los usuarios.
-* Qué problema resuelve el producto para estos usuarios.
-* Cuáles son los objetivos de estos usuarios en relación con el producto.
-* Cuáles son las principales funcionalidades del producto y cuál es su prioridad.
-* Cómo verificaste que el producto les está resolviendo sus problemas.
-* Cómo te asegurarás que estos usuarios usen este producto.
-
 ## Moodboard
 
 <center><img src="https://preview.ibb.co/kskbqe/moodboard.png"/></center><center><a href="https://image.ibb.co/egNNVe/moodboard.png">MOODBOARD</a></center>
@@ -56,6 +47,3 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 <center><img src="https://image.ibb.co/j7zSVe/marvel.png"/><img src="https://image.ibb.co/cspGOz/marvel2.png"/></center><center><a href="https://marvelapp.com/e2b3f54/screen/45795042">Marvel</a></center>
 
 <center><img src="https://i.imgur.com/mhmfCVH.jpg"/></center>
-
-
-  
