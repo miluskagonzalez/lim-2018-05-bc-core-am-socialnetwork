@@ -1,4 +1,12 @@
 /* global signOut */
 const btnSignOut = document.getElementById('sign-out');
 // Evento sign-out
-btnSignOut.addEventListener('click', signOut);
+btnSignOut.addEventListener('click', () => {
+  signOut()
+    .then((user) => {
+      console.log('Signed Out', user);
+      window.location.href = 'index.html';
+    }).catch((error) => {
+      console.error('Sign Out Error', error);
+    });
+});
