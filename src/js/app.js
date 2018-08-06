@@ -87,25 +87,34 @@ btnSignUp.addEventListener('click', () => {
     && validateEmail(email.value)
     && validatePassword(password.value)) {
     emailSignUp(email.value, password.value)
-      .then((user) => {
-        console.log(user);
+      .then((result) => {
+        const { user } = result;
+        user.updateProfile({
+          displayName: username.value,
+        })
+      })
+      .then((user)=> {
         window.location.href = 'home.html';
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.log(error);
       });
   }
 });
 // Evento sign-in con correo y contraseña de usuario ya registrado
 btnSignIn.addEventListener('click', () => {
-  emailSignIn(userEmail.value, userPassword.value)
-    .then((user) => {
-      console.log(user);
-      window.location.href = 'home.html';
-    })
-    .catch((error) => {
-      console.log('Usuario no existente, Registrarse');
-      console.log(error);
-    });
+  if (validateEmail(userEmail.value)
+  && validatePassword(userPassword.value)) {
+    emailSignIn(userEmail.value, userPassword.value)
+      .then((user) => {
+        console.log(user);
+        window.location.href = 'home.html';
+      })
+      .catch((error) => {
+        console.log('Usuario no existente, Registrarse');
+        console.log(error);
+      });
+  }
 });
 // Evento sign-in con Facebook
 btnFb.addEventListener('click', fbSignIn);

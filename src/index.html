@@ -26,7 +26,7 @@
       </section>
       <!--Tabs Registro / Inicio de sesión-->
       <section class="col s12 m5 full-height">
-        <div class="container">
+        <div class="container provisional-margin">
           <ul class="tabs">
             <li class="tab col s6">
               <a class="deep-koamaru bold-text" href="#sign-up-form">Únete</a>
@@ -54,10 +54,12 @@
               <label class="active" for="password">Contraseña</label>
               <span id="password-error" class="helper-text red-text hide"></span>
             </div>
-            <p>
-              Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los
-              <a href="#"> Términos y las políticas de privacidad</a>
-            </p>
+            <div>
+              <p>
+                <span>Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los</span> 
+                <a class="modal-trigger" href="#terms-and-conditions"> Términos y condiciones</a>
+              </p>
+            </div>
             <!--Botón de registro con email-->
             <button type="button" class="btn eucalyptus-bg" id="sign-up">Registrarme</button>
           </form>
@@ -73,31 +75,53 @@
               <label class="active" for="user-password">Contraseña</label>
               <span id="user-password-error" class="helper-text red-text hide"></span>
             </div>
-            <div>
-              <p><a href="#">¿Olvidaste tu contraseña?</a></p> 
+            <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+            <div class="input-field center-align">
+              <button type="button" class="btn eucalyptus-bg" id="sign-in">Iniciar sesión</button>
             </div>
-            <button type="button" class="btn eucalyptus-bg" id="sign-in">Iniciar sesión</button>
-            <!--Botón de log-in con Google-->
-            <button class="btn-floating red">
-              <i class="fab fa-google white-text" id="btnGoogle"></i>
-            </button>
-            <!--Botón de log-in con Facebook-->
-            <button class="btn-floating blue">
-              <i class="fab fa-facebook-f" id="fbBtn"></i>
-            </button>
+            <div class="input-field center-align">
+              <h6>Ingresa directamente con</h6>
+            </div>
+            <div class="input-field center-align">
+              <!--Botón de log-in con Google-->
+              <button class="btn-floating red">
+                <i class="fab fa-google white-text" id="btnGoogle"></i>
+              </button>
+              <!--Botón de log-in con Facebook-->
+              <button class="btn-floating blue">
+                <i class="fab fa-facebook-f" id="fbBtn"></i>
+              </button>
+            </div>
           </form>
+        </div>
+        <!--Terminos y condiciones-->
+        <div id="terms-and-conditions" class="modal">
+          <div class="modal-content">
+            <h4 class="center-align">Términos y condiciones</h4>
+            <ol>
+              <li>Debes ser mayor de 16 años para crear una cuenta.</li>
+              <li>Tus contribuciones e intercambios deben ser respetuosos y libres de juicios.</li>
+              <li>La información compartida por los miembros de la comunidad es confidencial.</li>
+              <li>Este sitio no debe ser usado como sustituto para ayuda médica profesional.</li>
+              <li>Este sitio no debe ser usado para propósitos comerciales.</li>
+              <li>Eres responsable por toda actividad que se realice desde tu cuenta.</li>           
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close btn-flat">Acepto</a>
+          </div>
         </div>
       </section>
     </main>
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <script src="firebase.js"></script>
+    <script src="js/firebase.js"></script>
     <!--Materialize-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script src="materialize.js"></script>
-    <!--Validation-->
-    <script src="validate.js"></script>
+    <script src="js/materialize.js"></script>
+    <!--Validación-->
+    <script src="js/validate.js"></script>
     <!--DOM-->
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

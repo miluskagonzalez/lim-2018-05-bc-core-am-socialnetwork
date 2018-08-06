@@ -8,7 +8,8 @@ const config = {
   messagingSenderId: '628278045322'
 };
 firebase.initializeApp(config);
-
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 // Creando usuario con email y contraseña
 window.emailSignUp = (name, email, password, form) => {
   firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -97,12 +98,16 @@ window.signOut = () => {
 };
 
 // Estado del usuario actual
-firebase.auth().onAuthStateChanged((user) => {
+auth.onAuthStateChanged((user) => {
   if (user) {
     // Usuario está logueado
-    console.log(user);
+    console.log(user, 'is logged in');
+    firestore.doc(`users/${user.uid}`).set({
+    username: user.displayName,
+    email: user.email,
+    })
   } else {
     // Usuario no está logueado
     console.log(user, 'is signed out');
   }
-});
+})
