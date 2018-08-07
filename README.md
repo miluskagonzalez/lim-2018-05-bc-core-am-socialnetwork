@@ -1,5 +1,5 @@
-<center> Red Social UNID∞S</center>
-===
+Red Social UNID∞S
+==============================
 
 UNID∞S es una red social de salud, pensada en los usuarios que requieren de la posibilidad de conectarse con otros en sus mismas circunstancias, condiciones o que cuenten con intereses similares, permitiendo a los usuarios registrados crear perfiles, enviar mensajes, publicar sus expereriencias, estos usuarios podrán mantenerse en contacto con amigos y otros usuarios de todo el mundo de forma anónima (por medio de un nickname).
 
@@ -44,6 +44,7 @@ El principal objetivo es que las personas afectadas por alguna enfermedad y con 
 
 ## Primer prototipo móvil de alta fidelidad
 
-<center><img src="https://image.ibb.co/j7zSVe/marvel.png"/><img src="https://image.ibb.co/cspGOz/marvel2.png"/></center><center><a href="https://marvelapp.com/e2b3f54/screen/45795042">Marvel</a></center>
+![marvel](https://image.ibb.co/j7zSVe/marvel.png)
+![marvel](https://image.ibb.co/cspGOz/marvel2.png)
+<a href="https://marvelapp.com/e2b3f54/screen/45795042">Marvel</a>
 
-<center><img src="https://i.imgur.com/mhmfCVH.jpg"/></center>
