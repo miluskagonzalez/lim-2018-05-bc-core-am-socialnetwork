@@ -26,7 +26,7 @@
       </section>
       <!--Tabs Registro / Inicio de sesión-->
       <section class="col s12 m5 full-height">
-        <div class="container provisional-margin">
+        <div class="container tab-vertical-margin">
           <ul class="tabs">
             <li class="tab col s6">
               <a class="deep-koamaru bold-text" href="#sign-up-form">Únete</a>
@@ -55,16 +55,18 @@
               <span id="password-error" class="helper-text red-text hide"></span>
             </div>
             <div>
-              <p>
-                <span>Haciendo clic en Registrarse, estás indicando que has leído y que aceptas los</span> 
+              <p></p>
+                <span>Haciendo clic en Registrarme, estás indicando que has leído y que aceptas los</span> 
                 <a class="modal-trigger" href="#terms-and-conditions"> Términos y condiciones</a>
               </p>
             </div>
             <!--Botón de registro con email-->
-            <button type="button" class="btn eucalyptus-bg" id="sign-up">Registrarme</button>
+            <div class="center-align">
+             <button type="button" class="btn eucalyptus-bg" id="sign-up">Registrarme</button> 
+            </div>
           </form>
           <!--Formulario de inicio de sesión con email-->
-          <form id="sign-in-form" class="">
+          <form id="sign-in-form">
             <div class="input-field">
               <input type="email" id="user-email" required>
               <label class="active" for="user-email">Correo electrónico</label>
