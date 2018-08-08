@@ -89,7 +89,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   background-color: #F6C937 !important;
 }
 
-/* negrita */
+/* Negrita */
 .bold-text {
   font-weight: 700;
 }
@@ -99,17 +99,18 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   margin: 0;
 }
 
-/* evitar scroll */
+/* Elimina scroll por default */
 .tabs {
   overflow-x: hidden;
 }
+
+ /* Sobre escribiendo colores por default */
 
 .tabs .tab a:focus,
 .tabs .tab a:focus.active {
   background: transparent;
 }
 
- /* label underline focus color */
 .input-field input[type=text]:not(.browser-default):focus,
 .input-field input[type=email]:not(.browser-default):focus,
 .input-field input[type=password]:not(.browser-default):focus,
