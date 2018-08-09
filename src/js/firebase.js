@@ -69,3 +69,33 @@ auth.onAuthStateChanged((user) => {
     console.log(user, 'is signed out');
   }
 })
+
+// observador de ingreso de datos
+// db.collection("users").get().then((querySnapshot) => {
+//   querySnapshot.forEach((doc) => {
+//       console.log(`${doc.id} => ${doc.data()}`);
+//   });
+// });
+
+// creando coleccion de post, guardando para editar
+// const docRef = db.collection("post").doc('postData');
+// // DOM
+// const post = document.getElementById('icon_prefix2');
+// const textPost = document.getElementById('text-post');
+// const btnpost = document.getElementById('btn-post');
+// // Evento oyente de post
+// btnpost.addEventListener('click', () => {
+//   const textToSave = post.value;
+//   console.log('texto de post ' + textToSave);
+//   docRef.set({
+//     contenido: textToSave
+//     // author: user,
+//     // privacidad: Privacy,
+//     // likes: like,
+//   }).then(() => {
+//     consolo.log('status saved');
+//   }).catch((error) => {
+//     console.log('got an error: ', error);
+//   })
+// event.preventDefault();
+// });
