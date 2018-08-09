@@ -22,30 +22,21 @@
   </head>
   <body>
     <!-- Barra de navegacion -->
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper logo-margin-left">
-          <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-            <i class="material-icons brand-logo">all_inclusive</i>
-          </a>
-        </div>
-      </nav>
-    </div>
+    <nav class="navbar-fixed white">
+      <div class="nav-wrapper logo-margin-left">
+        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+          <i class="material-icons brand-logo eucalyptus">all_inclusive</i>
+        </a>
+      </div>
+    </nav>
     <!--Sidenav-->
-    <div class="fixed">
+    <aside class="fixed">
       <ul id="slide-out" class="sidenav fixed">
         <li>
-          <div class="user-view">
-            <div class="background">
-              <img src="https://i.pinimg.com/originals/8a/c5/a1/8ac5a189fc1da03131d10b6cdb9a62d1.jpg">
-            </div>
+          <div class="user-view eucalyptus-bg">
             <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
-            <a href="#name">
-              <span class="name white-text">John Doe</span>
-            </a>
-            <a href="#email">
-              <span class="email white-text">jdandturk@gmail.com</span>
-            </a>
+            <span class="name white-text" id="username-display">John Doe</span>
+            <span class="email white-text" id="email-display"></span>
           </div>
         </li>
         <li>
@@ -57,7 +48,7 @@
         </li>
         <div class="divider"></div>
       </ul>
-    </div>
+    </aside>
     <!-- Contenedor para postear -->
     <div class="row card container content-post">
       <form class="col s12">
