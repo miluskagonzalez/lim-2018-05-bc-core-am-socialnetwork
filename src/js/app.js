@@ -1,10 +1,3 @@
-/* global validateUsername
-   global validateEmail
-   global validatePassword
-   global emailSignUp
-   global emailSignIn
-   global fbSignIn
-   global googleSignIn */
 // Declarando variables del form de registro
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -22,9 +15,13 @@ const btnSignIn = document.getElementById('sign-in');
 // Botones de registro con proveedor
 const btnFb = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
+const usernameModal = document.getElementById('username-modal');
+const usernameWithProvider = document.getElementById('username-with-provider');
+const usernameWithProviderError = document.getElementById('username-with-provider-error');
+const signInWithProvider = document.getElementById('signin-with-provider');
 // Mostrando en la UI estado de validación de nombre de usuario
 username.addEventListener('change', (event) => {
-  if (!validateUsername(event.target.value)) {
+  if (!validate(event.target)) {
     usernameError.innerText = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
     usernameError.classList.remove('hide');
     username.classList.add('invalid');
@@ -34,9 +31,20 @@ username.addEventListener('change', (event) => {
     username.classList.add('valid');
   }
 });
+usernameWithProvider.addEventListener('change', (event) => {
+  if (!validate(event.target)) {
+    usernameWithProviderError.innerText = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
+    usernameWithProviderError.classList.remove('hide');
+    usernameWithProvider.classList.add('invalid');
+  } else {
+    usernameWithProviderError.classList.add('hide');
+    usernameWithProvider.classList.remove('invalid');
+    usernameWithProvider.classList.add('valid');
+  }
+});
 // Mostrando en la UI estado de validación de correo eléctrónico
 email.addEventListener('change', (event) => {
-  if (!validateEmail(event.target.value)) {
+  if (!validate(event.target)) {
     emailError.innerText = 'Introduce un correo electrónico válido.';
     emailError.classList.remove('hide');
     email.classList.add('invalid');
@@ -47,7 +55,7 @@ email.addEventListener('change', (event) => {
   }
 });
 userEmail.addEventListener('change', (event) => {
-  if (!validateEmail(event.target.value)) {
+  if (!validate(event.target)) {
     userEmailError.innerText = 'Introduce un correo electrónico válido.';
     userEmailError.classList.remove('hide');
     userEmail.classList.add('invalid');
@@ -59,7 +67,7 @@ userEmail.addEventListener('change', (event) => {
 });
 // Mostrando en la UI estado de validación de contraseña
 password.addEventListener('change', (event) => {
-  if (!validatePassword(event.target.value)) {
+  if (!validate(event.target)) {
     passwordError.innerText = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
     passwordError.classList.remove('hide');
     password.classList.add('invalid');
@@ -71,7 +79,7 @@ password.addEventListener('change', (event) => {
 });
 // Mostrando en la UI estado de validación de contraseña
 userPassword.addEventListener('change', (event) => {
-  if (!validatePassword(event.target.value)) {
+  if (!validate(event.target)) {
     userPasswordError.innerText = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
     userPasswordError.classList.remove('hide');
     userPassword.classList.add('invalid');
@@ -81,18 +89,16 @@ userPassword.addEventListener('change', (event) => {
     userPassword.classList.add('valid');
   }
 });
-// Evento que registra usuario si inputs son válidos
+
+// Regitra usuario si inputs son válidos
 btnSignUp.addEventListener('click', () => {
-  if (validateUsername(username.value)
-    && validateEmail(email.value)
-    && validatePassword(password.value)) {
+  if (validate(username) && validate(email) && validate(password)) {
     emailSignUp(email.value, password.value)
-      .then((user) => {
-        console.log(user)
-        user.user.updateProfile({
-          displayName: username.value,
-        })
-        window.location.href = 'home.html';
+      .then(({ user }) => {
+        saveUser(user, username.value)
+          .then(() => {
+            window.location.replace('home.html');
+          });
       })
       .catch((error) => {
         console.log(error);
@@ -101,12 +107,11 @@ btnSignUp.addEventListener('click', () => {
 });
 // Evento sign-in con correo y contraseña de usuario ya registrado
 btnSignIn.addEventListener('click', () => {
-  if (validateEmail(userEmail.value)
-  && validatePassword(userPassword.value)) {
+  if (validate(userEmail) && validate(userPassword)) {
     emailSignIn(userEmail.value, userPassword.value)
       .then((user) => {
         console.log(user);
-        window.location.href = 'home.html';
+        window.location.replace('home.html');
       })
       .catch((error) => {
         console.log('Usuario no existente, Registrarse');
@@ -114,7 +119,54 @@ btnSignIn.addEventListener('click', () => {
       });
   }
 });
+
 // Evento sign-in con Facebook
-btnFb.addEventListener('click', fbSignIn);
+btnFb.addEventListener('click', () => {
+  fbSignIn()
+    .then(({ additionalUserInfo, user }) => {
+      const { isNewUser } = additionalUserInfo;
+      if (isNewUser) {
+        usernameModal.classList.add('modal-block');
+        signInWithProvider.addEventListener('click', () => {
+          if (validate(usernameWithProvider)) {
+            saveUser(user, usernameWithProvider.value)
+              .then(() => {
+                window.location.replace('home.html');
+              });
+          }
+        });
+      } else {
+        window.location.replace('home.html');
+      }
+    }).catch((error) => {
+      const {
+        code, message,
+      } = error;
+      console.log(code, message);
+    });
+});
 // Evento sign-in con Google
-btnGoogle.addEventListener('click', googleSignIn);
+btnGoogle.addEventListener('click', () => {
+  googleSignIn()
+    .then(({ additionalUserInfo, user }) => {
+      const { isNewUser } = additionalUserInfo;
+      if (isNewUser) {
+        usernameModal.classList.add('modal-block');
+        signInWithProvider.addEventListener('click', () => {
+          if (validate(usernameWithProvider)) {
+            saveUser(user, usernameWithProvider.value)
+              .then(() => {
+                window.location.replace('home.html');
+              });
+          }
+        });
+      } else {
+        window.location.replace('home.html');
+      }
+    }).catch((error) => {
+      const {
+        code, message, mail, credential,
+      } = error;
+      console.log(code, message, mail, credential);
+    });
+});
