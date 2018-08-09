@@ -1,116 +1,113 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Ícono -->
-  <link rel="icon" type="image/x-icon" 
-  href="http://starme.mx/icons/Nueva%20carpeta/Categor%C3%ADas/11.Salud-icono.png">
-  <!--Optimizado para mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Font Awesome-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
-  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-  crossorigin="anonymous">
-  <!--CSS Materialize-->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-  <title>Home</title>
-</head>
-
-<body>
-  <!-- Barra de navegacion -->
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper logo-margin-left">
-        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-          <i class="material-icons brand-logo">all_inclusive</i>
-        </a>
-      </div>
-    </nav>
-  </div>
-  <!--Sidenav-->
-  <div class="fixed">
-    <ul id="slide-out" class="sidenav fixed">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <img src="https://i.pinimg.com/originals/8a/c5/a1/8ac5a189fc1da03131d10b6cdb9a62d1.jpg">
-          </div>
-          <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
-          <a href="#name">
-            <span class="name white-text">John Doe</span>
-          </a>
-          <a href="#email">
-            <span class="email white-text">jdandturk@gmail.com</span>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Ícono -->
+    <link rel="icon" type="image/x-icon" 
+    href="http://starme.mx/icons/Nueva%20carpeta/Categor%C3%ADas/11.Salud-icono.png">
+    <!--Optimizado para mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+    <!--CSS Materialize-->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <title>Home</title>
+  </head>
+  <body>
+    <!-- Barra de navegacion -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper logo-margin-left">
+          <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+            <i class="material-icons brand-logo">all_inclusive</i>
           </a>
         </div>
-      </li>
-      <li>
-        <a href="#!">Link</a>
-      </li>
-      <div class="divider"></div>
-      <li>
-        <a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a>
-      </li>
-      <div class="divider"></div>
-    </ul>
-  </div>
-  <!-- Contenedor para postear -->
-  <div class="row card container content-post">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s11">
-          <i class="material-icons prefix">mode_edit</i>
-          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-          <label for="icon_prefix2">Hola, ¿cómo estás?</label>
+      </nav>
+    </div>
+    <!--Sidenav-->
+    <div class="fixed">
+      <ul id="slide-out" class="sidenav fixed">
+        <li>
+          <div class="user-view">
+            <div class="background">
+              <img src="https://i.pinimg.com/originals/8a/c5/a1/8ac5a189fc1da03131d10b6cdb9a62d1.jpg">
+            </div>
+            <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
+            <a href="#name">
+              <span class="name white-text">John Doe</span>
+            </a>
+            <a href="#email">
+              <span class="email white-text">jdandturk@gmail.com</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a href="#!">Link</a>
+        </li>
+        <div class="divider"></div>
+        <li>
+          <a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a>
+        </li>
+        <div class="divider"></div>
+      </ul>
+    </div>
+    <!-- Contenedor para postear -->
+    <div class="row card container content-post">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s11">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+            <label for="icon_prefix2">Hola, ¿cómo estás?</label>
+          </div>
+          <div class="general-margin-right">
+            <div class="right">
+              <button class="waves-effect waves-light btn-small general-margin-left">Publicar</button>
+            </div>
+            <div class="switch right-align">
+              <label>
+                Público
+                <input type="checkbox">
+                <span class="lever"></span>
+                Privado
+              </label>
+            </div>
+          </div>
         </div>
-        <div class="general-margin-right">
-          <div class="right">
-            <button class="waves-effect waves-light btn-small general-margin-left">Publicar</button>
-          </div>
-          <div class="switch right-align">
-            <label>
-              Público
-              <input type="checkbox">
-              <span class="lever"></span>
-              Privado
-            </label>
-          </div>
+      </form>
+    </div>
+    <!-- Contenedor de publicacion -->
+    <div class="row card container content-post">
+      <p>¡Hola! Soy un post!</p>
+      <div class="general-margin-right">
+        <div class="right">
+          <a class="waves-effect waves-light btn-small general-margin-left">Eliminar</a>
+        </div>
+        <div class="right">
+          <a class="waves-effect waves-light btn-small">Editar</a>
         </div>
       </div>
-    </form>
-  </div>
-  <!-- Contenedor de publicacion -->
-  <div class="row card container content-post">
-    <p>¡Hola! Soy un post!</p>
-    <div class="general-margin-right">
-      <div class="right">
-        <a class="waves-effect waves-light btn-small general-margin-left">Eliminar</a>
-      </div>
-      <div class="right">
-        <a class="waves-effect waves-light btn-small">Editar</a>
+      <div class="lined-row">
+        <i class="material-icons">favorite_border</i>
+        <p class="lined-row">Like</p>
       </div>
     </div>
-    <div class="lined-row">
-      <i class="material-icons">favorite_border</i>
-      <p class="lined-row">Like</p>
-    </div>
-  </div>
-  <!--Firebase-->
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
-  <script src="js/firebase.js"></script>
-  <!--Materialize-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <!--DOM-->
-  <script src="js/home.js"></script>
-</body>
-
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    <!--Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <!--DOM-->
+    <script src="js/home.js"></script>
+  </body>
 </html>
