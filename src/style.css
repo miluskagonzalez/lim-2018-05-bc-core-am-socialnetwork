@@ -1,7 +1,5 @@
 /* home */
-nav {
-  background-color: #40D1A4;
-}
+
 /* margen para logo */
 .logo-margin-left {
   margin-left: 4%;
@@ -123,6 +121,14 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-image: url(assets/images/smiling-woman-with-cellphone.jpg);
   background-size: cover;
   min-height: 170px !important;
+}
+
+.modal-block {
+  z-index: 1003;
+  display: block;
+  opacity: 1;
+  top: 10%;
+  transform: scaleX(1) scaleY(1);
 }
 
 @media (min-width: 601px) {

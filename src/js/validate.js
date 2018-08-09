@@ -1,13 +1,17 @@
-// Validando inputs de registro
-window.validateUsername = (username) => {
-  const usernameRegex = /^[ña-z ]{3,15}$/i;
-  return usernameRegex.test(username);
-};
-window.validateEmail = (email) => {
-  const emailRegex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/i; // ignora mayúsculas
-  return emailRegex.test(email);
-};
-window.validatePassword = (password) => {
-  const passwordRegex = /^[ña-z\d]{6,}$/; // no ignora mayúsculas
-  return passwordRegex.test(password);
+// Validando inputs
+window.validate = (input) => {
+  let regex;
+  switch (input.type) {
+    case 'text':
+      regex = /^[ña-z ]{3,15}$/i;
+      break;
+    case 'email':
+      regex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/;
+      break;
+    case 'password':
+      regex = /^[ña-z\d]{6,}$/i;
+      break;
+    // no default
+  }
+  return regex.test(input.value);
 };
