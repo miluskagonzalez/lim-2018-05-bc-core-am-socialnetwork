@@ -4,10 +4,10 @@ window.validateUsername = (username) => {
   return usernameRegex.test(username);
 };
 window.validateEmail = (email) => {
-  const emailRegex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/;
+  const emailRegex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/i; // ignora mayúsculas
   return emailRegex.test(email);
 };
 window.validatePassword = (password) => {
-  const passwordRegex = /^[ña-z\d]{6,}$/i;
+  const passwordRegex = /^[ña-z\d]{6,}$/; // no ignora mayúsculas
   return passwordRegex.test(password);
 };
