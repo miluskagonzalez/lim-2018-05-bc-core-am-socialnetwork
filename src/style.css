@@ -1,4 +1,7 @@
 /* home */
+nav {
+  background-color: #40D1A4;
+}
 /* margen para logo */
 .logo-margin-left {
   margin-left: 4%;
@@ -12,10 +15,10 @@
 /* textarea para postear y contenedor de post*/
 .content-post {
   margin: auto;
-  margin-top: 5%;
+  margin-top: 2%;
   padding-left: 3%;
   padding-bottom: 0;
-  padding-top: 3%;
+  padding-top: 1.5%;
 }
 
 /* foto de perfil o icono */
