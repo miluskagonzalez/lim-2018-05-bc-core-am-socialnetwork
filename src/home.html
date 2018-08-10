@@ -35,8 +35,8 @@
         <li>
           <div class="user-view eucalyptus-bg">
             <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
-            <span class="name white-text" id="username-display">John Doe</span>
-            <span class="email white-text" id="email-display"></span>
+            <span class="name white-text">John Doe</span>
+            <span class="email white-text"></span>
           </div>
         </li>
         <li>
@@ -51,13 +51,12 @@
     </aside>
     <!-- Contenedor para postear -->
     <div class="row card container content-post">
-      <form class="col s12">
-        <p class="name">John Doe</p>
+      <form class="col s12" id="post-form">
         <div class="row">
           <div class="input-field col s11">
             <i class="material-icons prefix">mode_edit</i>
-            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">Hola, ¿cómo estás?</label>
+            <textarea id="post" name="content" class="materialize-textarea"></textarea>
+            <label for="post">¡Hola, <span class="name"></span>! ¿Cómo estás?</label>
           </div>
           <div class="general-margin-right">
             <div class="right">
@@ -66,7 +65,7 @@
             <div class="switch right-align">
               <label>
                 Público
-                <input type="checkbox">
+                <input name="privacy" type="checkbox">
                 <span class="lever"></span>
                 Privado
               </label>

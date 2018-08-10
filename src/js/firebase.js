@@ -32,11 +32,30 @@ const signOut = () => auth.signOut();
 // Guardar usuario
 const saveUser = (user, username) => db.doc(`users/${user.uid}`).set({ username, email: user.email });
 
+const getCurrentUserData = () => db.doc(`users/${auth.currentUser.uid}`).get().then(doc => doc.data());
+
+// Guardar post
+const savePost = ({ content, privacy }, { username }) => {
+  db.collection('posts').add({
+    content: content.value,
+    private: privacy.checked,
+    author: {
+      username,
+      uid: auth.currentUser.uid,
+    },
+    likes: 0,
+  });
+};
+
 // Estado del usuario actual
 auth.onAuthStateChanged((user) => {
   if (user) {
     // Usuario está logueado
     const { uid } = user;
+    const names = [...document.getElementsByClassName('name')];
+    names.forEach((name) => {
+      name.innerText = user.displayName;
+    });
   } else {
     // Usuario no está logueado
     console.log(user, 'is signed out');
