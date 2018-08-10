@@ -60,10 +60,6 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   color: #40D1A4 !important;
 }
 
-.pale-robin-egg-blue {
-  color: #A4D4D1 !important;
-}
-
 .saffron {
   color: #F6C937 !important;
 }
@@ -77,10 +73,6 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 .eucalyptus-bg,
 .tabs .indicator {
   background-color: #40D1A4 !important;
-}
-
-.pale-robin-egg-blue-bg {
-  background-color: #A4D4D1 !important;
 }
 
 .saffron-bg {
@@ -129,6 +121,18 @@ textarea.materialize-textarea:focus:not([readonly]) {
   opacity: 1;
   top: 10%;
   transform: scaleX(1) scaleY(1);
+}
+
+.textarea-custom-padding {
+  padding-top: 1.8rem !important;
+}
+
+@media (min-width: 401px) {
+
+  .textarea-custom-padding {
+    padding-top: 0.8rem !important;
+  }
+
 }
 
 @media (min-width: 601px) {

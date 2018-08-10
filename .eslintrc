@@ -16,6 +16,6 @@
     "validate": true,
     "saveUser": true,
     "getCurrentUserData": true,
-    "savePost": true,
+    "savePost": true
   }
 }
