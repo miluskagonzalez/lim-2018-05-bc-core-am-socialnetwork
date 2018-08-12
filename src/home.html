@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- Barra de navegacion -->
-    <nav class="navbar-fixed white">
+    <nav class="navbar-fixed deep-koamaru-bg">
       <header class="nav-wrapper logo-margin-left">
         <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
           <i class="material-icons brand-logo eucalyptus">all_inclusive</i>
@@ -33,20 +33,16 @@
     <aside class="fixed">
       <ul id="slide-out" class="sidenav fixed">
         <li>
-          <div class="user-view eucalyptus-bg">
-            <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
-            <span class="name white-text">John Doe</span>
-            <span class="email white-text"></span>
+          <div class="user-view">
+            <img id="user-photo" class="circle">
+            <span class="name"></span>
+            <span class="email"></span>
           </div>
         </li>
-        <li>
-          <a href="#!">Link</a>
-        </li>
         <div class="divider"></div>
         <li>
-          <a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a>
+          <a id="sign-out" class="waves-effect waves-light eucalyptus-bg white-text">Cerrar Sesión</a>
         </li>
-        <div class="divider"></div>
       </ul>
     </aside>
     <main class="section">
@@ -58,9 +54,7 @@
               <div class="input-field col s11 center-align">
                 <i class="material-icons prefix">mode_edit</i>
                 <textarea id="post" name="content" class="materialize-textarea textarea-custom-padding"></textarea>
-                <label for="post">
-                ¡Hola, <span class="name"></span>! ¿Cómo estás?
-                </label>
+                <label for="post">¡Hola, <span class="name"></span>! ¿Cómo estás?</label>
               </div>
               <div class="general-margin-right">
                 <div class="right">
@@ -79,26 +73,8 @@
           </form>
         </div>
       </section>
-      <!-- Contenedor de publicacion -->
-      <section>
-        <div class="row card container content-post">
-          <p class="name"></p>
-          <!-- TO DO: Evitar overflow del texto -->
-          <p>¡Hola! Soy un post!</p>
-          <div class="general-margin-right">
-            <div class="right">
-              <a class="waves-effect waves-light btn-small general-margin-left eucalyptus-bg">Eliminar</a>
-            </div>
-            <div class="right">
-              <a class="waves-effect waves-light btn-small eucalyptus-bg">Editar</a>
-            </div>
-          </div>
-          <div class="lined-row" id="like">
-            <i class="material-icons">favorite_border</i>
-            <p class="lined-row">Like</p>
-          </div>
-        </div>
-      </section>
+      <!-- Contenedor de publicaciones -->
+      <section id="posts-container"></section>
     </main>
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>

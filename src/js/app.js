@@ -94,12 +94,8 @@ userPassword.addEventListener('change', (event) => {
 btnSignUp.addEventListener('click', () => {
   if (validate(username) && validate(email) && validate(password)) {
     emailSignUp(email.value, password.value)
-      .then(({ user }) => {
-        saveUser(user, username.value)
-          .then(() => {
-            window.location.replace('home.html');
-          });
-      })
+      .then(({ user }) => saveUser(user, username.value))
+      .then(() => window.location.replace('home.html'))
       .catch((error) => {
         console.log(error);
       });
