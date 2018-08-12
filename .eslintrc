@@ -16,6 +16,8 @@
     "validate": true,
     "saveUser": true,
     "getCurrentUserData": true,
-    "savePost": true
+    "savePost": true,
+    "getPosts": true,
+    "onAuthState": true
   }
 }
