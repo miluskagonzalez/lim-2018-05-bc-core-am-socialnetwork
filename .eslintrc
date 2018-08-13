@@ -18,6 +18,7 @@
     "getCurrentUserData": true,
     "savePost": true,
     "getPosts": true,
-    "onAuthState": true
+    "onAuthState": true,
+    "deletPost": true
   }
 }
