@@ -10,9 +10,9 @@ postForm.addEventListener('submit', (event) => {
     document.getElementById('empty-post').classList.add('modal-block');
   } else {
     getCurrentUserData()
-    .then(userData => savePost(postForm, userData))
-    .then(() => postForm.reset())
-    .catch(error => console.log(error));
+      .then(userData => savePost(postForm, userData))
+      .then(() => postForm.reset())
+      .catch(error => console.log(error));
   }
 });
 
@@ -38,8 +38,8 @@ const renderPosts = (post, postID, isCurrentUser) => {
       </div>
     </div>` : ''}
     <div class="valign-wrapper">
-      <i class="material-icons left">favorite_border</i>
-      <p> Likes <span id="like-count">12</span></p>
+      <i class="material-icons eucalyptus left btn-custom" onclick="btnLike('${postID}', '${post.likes}')">favorite</i>
+      <p> Likes <span>${post.likes}</span></p>
     </div>
   </div>`;
 };
@@ -54,6 +54,12 @@ const btnDeletePost = (postID) => {
       .then(() => closeModal('delete'))
       .catch(error => console.error('Error removing document: ', error));
   });
+};
+
+// Evento likear post
+const btnLike = (postID, postLikes) => {
+  const likeCount = parseInt(postLikes, 10) + 1;
+  updateLikeCount(postID, likeCount);
 };
 
 // Evento sign-out

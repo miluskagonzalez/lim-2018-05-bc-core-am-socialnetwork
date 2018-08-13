@@ -81,6 +81,10 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   font-weight: 700;
 }
 
+.btn-custom {
+  cursor: pointer;
+}
+
 /* Elimina todos los márgenes */
 .no-margin {
   margin: 0;

@@ -29,7 +29,11 @@ const googleSignIn = () => {
 // Sign-out del usuario
 const signOut = () => auth.signOut();
 // Guardar usuario
-const saveUser = (user, username) => database.doc(`users/${user.uid}`).set({ username, email: user.email });
+const saveUser = (user, username) => database.doc(`users/${user.uid}`).set({
+  username,
+  email: user.email,
+  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+});
 
 const getCurrentUserData = () => database.doc(`users/${auth.currentUser.uid}`).get();
 // Guardar post
@@ -41,10 +45,11 @@ const savePost = ({ content, privacy }, userData) => database.collection('posts'
     uid: userData.id,
   },
   likes: 0,
+  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
 });
 
 const getPosts = (postsContainer, currentID, renderPosts) => {
-  database.collection('posts').onSnapshot((snapshot) => {
+  database.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
     const container = postsContainer;
     container.innerHTML = '';
     snapshot.forEach((doc) => {
@@ -60,6 +65,9 @@ const getPosts = (postsContainer, currentID, renderPosts) => {
 
 // Borrar post
 const deletPost = id => database.doc(`posts/${id}`).delete();
+
+// Dar like a un post
+const updateLikeCount = (postID, likeCount) => database.doc(`posts/${postID}`).update({ likes: likeCount });
 
 // Estado del usuario actual
 const onAuthState = (postsContainer, renderPosts) => {
