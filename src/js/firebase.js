@@ -10,8 +10,8 @@ const config = {
 };
 firebase.initializeApp(config);
 const auth = firebase.auth();
-const db = firebase.firestore();
-db.settings({ timestampsInSnapshots: true });
+const database = firebase.firestore();
+database.settings({ timestampsInSnapshots: true });
 // Creando usuario con email y contraseña
 const emailSignUp = (email, password) => auth.createUserWithEmailAndPassword(email, password);
 // Sign-in con email y password
@@ -28,73 +28,70 @@ const googleSignIn = () => {
 };
 // Sign-out del usuario
 const signOut = () => auth.signOut();
-
 // Guardar usuario
-const saveUser = (user, username) => db.doc(`users/${user.uid}`).set({ username, email: user.email });
+const saveUser = (user, username) => database.doc(`users/${user.uid}`).set({
+  username,
+  email: user.email,
+  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+});
 
-const getCurrentUserData = () => db.doc(`users/${auth.currentUser.uid}`).get().then(doc => doc.data());
-
+const getCurrentUserData = () => database.doc(`users/${auth.currentUser.uid}`).get();
 // Guardar post
-const savePost = ({ content, privacy }, { username }) => {
-  db.collection('posts').add({
-    content: content.value,
-    private: privacy.checked,
-    author: {
-      username,
-      uid: auth.currentUser.uid,
-    },
-    likes: 0,
+const savePost = ({ content, privacy }, userData) => database.collection('posts').add({
+  content: content.value,
+  private: privacy.checked,
+  author: {
+    username: userData.data().username,
+    uid: userData.id,
+  },
+  likes: 0,
+  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+});
+
+const getPosts = (postsContainer, currentID, renderPosts) => {
+  database.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
+    const container = postsContainer;
+    container.innerHTML = '';
+    snapshot.forEach((doc) => {
+      const post = doc.data();
+      if (post.author.uid !== currentID && post.private === false) {
+        renderPosts(post, doc.id, false);
+      } else if (post.author.uid === currentID) {
+        renderPosts(post, doc.id, true);
+      }
+    });
   });
 };
 
-// Eliminar post
-db.collection("cities").doc("DC").delete().then(function() {
-  console.log("Document successfully deleted!");
-}).catch(function(error) {
-  console.error("Error removing document: ", error);
-});
+// Borrar post
+const deletPost = id => database.doc(`posts/${id}`).delete();
+
+// Dar like a un post
+const updateLikeCount = (postID, likeCount) => database.doc(`posts/${postID}`).update({ likes: likeCount });
 
 // Estado del usuario actual
-auth.onAuthStateChanged((user) => {
-  if (user) {
-    // Usuario está logueado
-    const { uid } = user;
-    const names = [...document.getElementsByClassName('name')];
-    names.forEach((name) => {
-      name.innerText = user.displayName;
-    });
-  } else {
-    // Usuario no está logueado
-    console.log(user, 'is signed out');
-  }
-});
-
-// observador de ingreso de datos
-// db.collection("users").get().then((querySnapshot) => {
-//   querySnapshot.forEach((doc) => {
-//       console.log(`${doc.id} => ${doc.data()}`);
-//   });
-// });
-
-// creando coleccion de post, guardando para editar
-// const docRef = db.collection("post").doc('postData');
-// // DOM
-// const post = document.getElementById('icon_prefix2');
-// const textPost = document.getElementById('text-post');
-// const btnpost = document.getElementById('btn-post');
-// // Evento oyente de post
-// btnpost.addEventListener('click', () => {
-//   const textToSave = post.value;
-//   console.log('texto de post ' + textToSave);
-//   docRef.set({
-//     contenido: textToSave
-//     // author: user,
-//     // privacidad: Privacy,
-//     // likes: like,
-//   }).then(() => {
-//     consolo.log('status saved');
-//   }).catch((error) => {
-//     console.log('got an error: ', error);
-//   })
-// event.preventDefault();
-// });
+const onAuthState = (postsContainer, renderPosts) => {
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      getCurrentUserData()
+        .then(({ id }) => {
+          getPosts(postsContainer, id, renderPosts);
+        });
+      // Usuario está logueado
+      // const { uid, photoURL } = user;
+      // const names = [...document.getElementsByClassName('name')];
+      // names.forEach((name) => {
+      //   name.innerText = user.displayName;
+      // });
+      // document.getElementById('user-photo').src = photoURL;
+      // const emails = [...document.getElementsByClassName('email')];
+      // emails.forEach(uemail => {
+      //   const email = uemail;
+      //   email.innerText = user.email;
+      // });
+    } else {
+      // Usuario no está logueado
+      console.log(user, 'is signed out');
+    }
+  });
+};

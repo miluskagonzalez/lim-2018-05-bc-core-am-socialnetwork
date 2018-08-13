@@ -20,47 +20,43 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <title>Home</title>
   </head>
-  <body>
+  <body class="grey lighten-3">
     <!-- Barra de navegacion -->
-    <nav class="navbar-fixed white">
+    <div class="navbar-fixed">
+      <nav class="eucalyptus-bg">
       <header class="nav-wrapper logo-margin-left">
         <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-          <i class="material-icons brand-logo eucalyptus">all_inclusive</i>
+          <i class="material-icons brand-logo deep-koamaru">all_inclusive</i>
         </a>
       </header>
     </nav>
+    </div>
     <!--Sidenav-->
     <aside class="fixed">
       <ul id="slide-out" class="sidenav fixed">
         <li>
-          <div class="user-view eucalyptus-bg">
-            <img class="circle size-photo" src="http://debian.org.es/img/anonymous.jpg">
-            <span class="name white-text">John Doe</span>
-            <span class="email white-text"></span>
+          <div class="user-view">
+            <img id="user-photo" class="circle">
+            <span class="name"></span>
+            <span class="email"></span>
           </div>
         </li>
-        <li>
-          <a href="#!">Link</a>
-        </li>
         <div class="divider"></div>
         <li>
-          <a id="sign-out" class="waves-effect waves-light">Cerrar Sesión</a>
+          <a id="sign-out" class="waves-effect waves-light eucalyptus-bg white-text">Cerrar Sesión</a>
         </li>
-        <div class="divider"></div>
       </ul>
     </aside>
-    <main class="section">
+    <main id="main" class="section">
       <!-- Contenedor para postear -->
-      <section class="section">
+      <section>
         <div class="row card container content-post">
           <form class="col s12" id="post-form">
             <div class="row">
               <div class="input-field col s11 center-align">
-                <i class="material-icons prefix">mode_edit</i>
+                <i class="material-icons prefix">insert_comment</i>
                 <textarea id="post" name="content" class="materialize-textarea textarea-custom-padding"></textarea>
-                <label for="post">
-                ¡Hola, <span class="name"></span>! ¿Cómo estás?
-                </label>
+                <label for="post">¡Hola, <span class="name"></span>! ¿Cómo estás?</label>
               </div>
               <div class="general-margin-right">
                 <div class="right">
@@ -79,23 +75,26 @@
           </form>
         </div>
       </section>
-      <!-- Contenedor de publicacion -->
+      <!-- Contenedor de publicaciones -->
+      <section id="posts-container"></section>
       <section>
-        <div class="row card container content-post">
-          <p class="name"></p>
-          <!-- TO DO: Evitar overflow del texto -->
-          <p>¡Hola! Soy un post!</p>
-          <div class="general-margin-right">
-            <div class="right">
-              <a class="waves-effect waves-light btn-small general-margin-left eucalyptus-bg">Eliminar</a>
-            </div>
-            <div class="right">
-              <a class="waves-effect waves-light btn-small eucalyptus-bg">Editar</a>
-            </div>
+        <div id="delete" class="modal">
+          <div class="modal-content">
+            <h4>Eliminar Post</h4>
+            <h6>Este post se eliminará de forma permanente. Para continuar, haz click en eliminar.</h6>
           </div>
-          <div class="lined-row" id="like">
-            <i class="material-icons">favorite_border</i>
-            <p class="lined-row">Like</p>
+          <div class="modal-footer">
+            <button onclick="closeModal('delete')" class="modal-close waves-effect waves-light btn-flat btn-small">Cancelar</button>
+            <button id="confirm-delete" class="modal-close waves-effect waves-light btn-flat btn-small red white-text">Eliminar</button>
+          </div>
+        </div>
+        <div id="empty-post" class="modal">
+          <div class="modal-content">
+            <h4>Post vacío</h4>
+            <h6>¡Hola! Por favor escribe algo para publicar.</h6>
+          </div>
+          <div class="modal-footer">
+            <button onclick="closeModal('empty-post')" class="modal-close waves-effect waves-light btn-flat">Aceptar</button>
           </div>
         </div>
       </section>
