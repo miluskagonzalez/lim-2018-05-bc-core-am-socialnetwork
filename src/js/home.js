@@ -44,6 +44,20 @@ const renderPosts = (post, postID, isCurrentUser) => {
   </div>`;
 };
 
+const renderUserInfo = (photoURL, userData) => {
+  if (photoURL !== undefined && photoURL !== null) { document.getElementById('user-photo').src = photoURL };
+  const names = [...document.getElementsByClassName('name')];
+  names.forEach((name) => {
+    const username = name;
+    username.innerText = userData.data().username;
+  });
+  const emails = [...document.getElementsByClassName('email')];
+  emails.forEach(email => {
+    const userEmail = email;
+    userEmail.innerText = userData.data().email;
+  });
+};
+
 const closeModal = modalID => document.getElementById(modalID).classList.remove('modal-block');
 
 // Evento borrar post
@@ -108,4 +122,4 @@ btnSignOut.addEventListener('click', () => {
     });
 });
 
-onAuthState(postsContainer, renderPosts);
+onAuthState(postsContainer, renderPosts, renderUserInfo);

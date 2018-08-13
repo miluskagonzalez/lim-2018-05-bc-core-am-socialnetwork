@@ -75,27 +75,16 @@ const updatePost = (postID, { content, privacy }) => database.doc(`posts/${postI
 const updateLikeCount = (postID, likeCount) => database.doc(`posts/${postID}`).update({ likes: likeCount });
 
 // Estado del usuario actual
-const onAuthState = (postsContainer, renderPosts) => {
+const onAuthState = (postsContainer, renderPosts, renderUserInfo) => {
   auth.onAuthStateChanged((user) => {
     if (user) {
+      const { photoURL } = user;    
       getCurrentUserData()
-        .then(({ id }) => {
-          getPosts(postsContainer, id, renderPosts);
+        .then((userData) => {
+          getPosts(postsContainer, userData.id, renderPosts);
+          renderUserInfo(photoURL, userData);
         });
-      // Usuario está logueado
-      // const { uid, photoURL } = user;
-      // const names = [...document.getElementsByClassName('name')];
-      // names.forEach((name) => {
-      //   name.innerText = user.displayName;
-      // });
-      // document.getElementById('user-photo').src = photoURL;
-      // const emails = [...document.getElementsByClassName('email')];
-      // emails.forEach(uemail => {
-      //   const email = uemail;
-      //   email.innerText = user.email;
-      // });
     } else {
-      // Usuario no está logueado
       window.location.replace('index.html');
     }
   });
