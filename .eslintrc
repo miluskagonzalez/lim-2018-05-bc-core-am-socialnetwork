@@ -19,6 +19,7 @@
     "savePost": true,
     "getPosts": true,
     "onAuthState": true,
-    "deletPost": true
+    "deletPost": true,
+    "updateLikeCount": true
   }
 }
