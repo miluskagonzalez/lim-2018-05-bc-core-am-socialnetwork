@@ -97,7 +97,10 @@ btnSignUp.addEventListener('click', () => {
       .then(({ user }) => saveUser(user, username.value))
       .then(() => window.location.replace('home.html'))
       .catch((error) => {
-        console.log(error);
+        console.log(error)
+        if ( error.code === auth/user-not-found) {
+
+        }
       });
   }
 });
@@ -105,36 +108,35 @@ btnSignUp.addEventListener('click', () => {
 btnSignIn.addEventListener('click', () => {
   if (validate(userEmail) && validate(userPassword)) {
     emailSignIn(userEmail.value, userPassword.value)
-      .then((user) => {
-        console.log(user);
-        window.location.replace('home.html');
-      })
+      .then(() => window.location.replace('home.html'))
       .catch((error) => {
-        console.log('Usuario no existente, Registrarse');
         console.log(error);
       });
   }
 });
 
+const processUser = (additionalUserInfo, user) => {
+  const { isNewUser } = additionalUserInfo;
+  if (isNewUser) {
+    usernameModal.classList.add('modal-block');
+    signInWithProvider.addEventListener('click', () => {
+      if (validate(usernameWithProvider)) {
+        saveUser(user, usernameWithProvider.value)
+          .then(() => {
+            window.location.replace('home.html');
+          });
+      }
+    });
+  } else {
+    window.location.replace('home.html');
+  }
+};
+
 // Evento sign-in con Facebook
 btnFb.addEventListener('click', () => {
   fbSignIn()
-    .then(({ additionalUserInfo, user }) => {
-      const { isNewUser } = additionalUserInfo;
-      if (isNewUser) {
-        usernameModal.classList.add('modal-block');
-        signInWithProvider.addEventListener('click', () => {
-          if (validate(usernameWithProvider)) {
-            saveUser(user, usernameWithProvider.value)
-              .then(() => {
-                window.location.replace('home.html');
-              });
-          }
-        });
-      } else {
-        window.location.replace('home.html');
-      }
-    }).catch((error) => {
+    .then(({ additionalUserInfo, user }) => processUser(additionalUserInfo, user))
+    .catch((error) => {
       const {
         code, message,
       } = error;
@@ -144,22 +146,8 @@ btnFb.addEventListener('click', () => {
 // Evento sign-in con Google
 btnGoogle.addEventListener('click', () => {
   googleSignIn()
-    .then(({ additionalUserInfo, user }) => {
-      const { isNewUser } = additionalUserInfo;
-      if (isNewUser) {
-        usernameModal.classList.add('modal-block');
-        signInWithProvider.addEventListener('click', () => {
-          if (validate(usernameWithProvider)) {
-            saveUser(user, usernameWithProvider.value)
-              .then(() => {
-                window.location.replace('home.html');
-              });
-          }
-        });
-      } else {
-        window.location.replace('home.html');
-      }
-    }).catch((error) => {
+    .then(({ additionalUserInfo, user }) => processUser(additionalUserInfo, user))
+    .catch((error) => {
       const {
         code, message, mail, credential,
       } = error;

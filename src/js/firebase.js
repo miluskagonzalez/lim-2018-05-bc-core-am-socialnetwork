@@ -78,7 +78,7 @@ const updateLikeCount = (postID, likeCount) => database.doc(`posts/${postID}`).u
 const onAuthState = (postsContainer, renderPosts, renderUserInfo) => {
   auth.onAuthStateChanged((user) => {
     if (user) {
-      const { photoURL } = user;    
+      const { photoURL } = user;
       getCurrentUserData()
         .then((userData) => {
           getPosts(postsContainer, userData.id, renderPosts);
