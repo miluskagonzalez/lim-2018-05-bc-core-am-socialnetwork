@@ -19,12 +19,12 @@ postForm.addEventListener('submit', (event) => {
 // Publicar posts
 const renderPosts = (post, postID, isCurrentUser) => {
   console.log(post, postID, isCurrentUser);
-  postsContainer.innerHTML += `<div class="row card container content-post">
+  postsContainer.innerHTML += `<div id="${postID}" class="row card container content-post">
     <p class="bold-text valign-wrapper">
       <span class="deep-koamaru">${post.author.username}</span>
       <i class="material-icons tiny eucalyptus right">${post.private === true ? 'lock' : 'public'}</i>
     </p>
-    <p id="${postID}">${post.content}</p>
+    <p>${post.content}</p>
     ${isCurrentUser ? `<div class="general-margin-right">
       <div class="right">
         <button class="waves-effect waves-light btn-small general-margin-left red" onclick="btnDeletePost('${postID}')">
@@ -32,7 +32,7 @@ const renderPosts = (post, postID, isCurrentUser) => {
         </button>
       </div>
       <div class="right">
-        <button class="waves-effect waves-light btn-small eucalyptus-bg">
+        <button class="waves-effect waves-light btn-small eucalyptus-bg" onclick="btnEditPost('${postID}', '${post.content}', ${post.private})">
           <i class="material-icons">edit</i>
         </button>
       </div>
@@ -55,6 +55,32 @@ const btnDeletePost = (postID) => {
       .catch(error => console.error('Error removing document: ', error));
   });
 };
+
+const btnEditPost = (postID, postContent, private) => {
+  document.getElementById(postID).innerHTML = `<form class="col s12" id="edit-form">
+  <div class="row">
+    <div class="input-field col s11 center-align">
+      <i class="material-icons prefix active">edit</i>
+      <textarea id="edit" name="content" class="materialize-textarea auto-height">${postContent}</textarea>
+      <label class="active" for="edit">Edita el contenido de tu post y/o la privacidad</label>
+    </div>
+    <div class="general-margin-right">
+      <div class="right">
+        <button class="waves-effect waves-light btn-small eucalyptus-bg general-margin-left">Guardar</button>
+      </div>
+      <div class="switch right-align">
+        <label>
+          Público
+          <input name="privacy" type="checkbox" ${private === true ? 'checked' : ''}>
+          <span class="lever"></span>
+          Privado
+        </label>
+      </div>
+    </div>
+  </div>
+</form>`
+// TO DO: que la información ingresada se guarde en el mismo post (con update) 
+}
 
 // Evento likear post
 const btnLike = (postID, postLikes) => {

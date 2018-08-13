@@ -76,6 +76,10 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   background-color: #40D1A4 !important;
 }
 
+.auto-height {
+  height: auto !important;
+}
+
 /* Negrita */
 .bold-text {
   font-weight: 700;
