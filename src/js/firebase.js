@@ -43,7 +43,7 @@ const savePost = ({ content, privacy }, userData) => database.collection('posts'
   likes: 0,
 });
 
-const getPosts = (currentID, renderPosts, postsContainer) => {
+const getPosts = (postsContainer, currentID, renderPosts) => {
   database.collection('posts').onSnapshot((snapshot) => {
     const container = postsContainer;
     container.innerHTML = '';
@@ -57,13 +57,17 @@ const getPosts = (currentID, renderPosts, postsContainer) => {
     });
   });
 };
+
+// Borrar post
+const deletPost = id => database.doc(`posts/${id}`).delete();
+
 // Estado del usuario actual
-const onAuthState = (renderPosts, postsContainer) => {
+const onAuthState = (postsContainer, renderPosts) => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       getCurrentUserData()
         .then(({ id }) => {
-          getPosts(id, renderPosts, postsContainer);
+          getPosts(postsContainer, id, renderPosts);
         });
       // Usuario está logueado
       // const { uid, photoURL } = user;

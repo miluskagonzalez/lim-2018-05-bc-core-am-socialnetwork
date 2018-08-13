@@ -13,7 +13,8 @@
 /* textarea para postear y contenedor de post*/
 .content-post {
   margin: auto;
-  margin-top: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding-left: 3%;
   padding-bottom: 0;
   padding-top: 1.5%;
@@ -63,10 +64,6 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   color: #40D1A4 !important;
 }
 
-.saffron {
-  color: #F6C937 !important;
-}
-
 /* Colores de fondo */
 
 .deep-koamaru-bg {
@@ -74,12 +71,9 @@ textarea.materialize-textarea:focus:not([readonly])+label {
 }
 
 .eucalyptus-bg,
-.tabs .indicator {
+.tabs .indicator,
+.switch label input[type=checkbox]:checked+.lever {
   background-color: #40D1A4 !important;
-}
-
-.saffron-bg {
-  background-color: #F6C937 !important;
 }
 
 /* Negrita */
@@ -146,6 +140,11 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
   .image-background {
     background-position: center;
+  }
+
+  .content-post {
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
 
   .displace-left {

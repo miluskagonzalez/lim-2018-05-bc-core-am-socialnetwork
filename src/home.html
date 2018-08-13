@@ -20,15 +20,17 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
     <title>Home</title>
   </head>
-  <body>
+  <body class="grey lighten-3">
     <!-- Barra de navegacion -->
-    <nav class="navbar-fixed deep-koamaru-bg">
+    <div class="navbar-fixed">
+      <nav class="eucalyptus-bg">
       <header class="nav-wrapper logo-margin-left">
         <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-          <i class="material-icons brand-logo eucalyptus">all_inclusive</i>
+          <i class="material-icons brand-logo deep-koamaru">all_inclusive</i>
         </a>
       </header>
     </nav>
+    </div>
     <!--Sidenav-->
     <aside class="fixed">
       <ul id="slide-out" class="sidenav fixed">
@@ -45,14 +47,14 @@
         </li>
       </ul>
     </aside>
-    <main class="section">
+    <main id="main" class="section">
       <!-- Contenedor para postear -->
-      <section class="section">
+      <section>
         <div class="row card container content-post">
           <form class="col s12" id="post-form">
             <div class="row">
               <div class="input-field col s11 center-align">
-                <i class="material-icons prefix">mode_edit</i>
+                <i class="material-icons prefix">insert_comment</i>
                 <textarea id="post" name="content" class="materialize-textarea textarea-custom-padding"></textarea>
                 <label for="post">¡Hola, <span class="name"></span>! ¿Cómo estás?</label>
               </div>
@@ -75,6 +77,18 @@
       </section>
       <!-- Contenedor de publicaciones -->
       <section id="posts-container"></section>
+      <section>
+        <div id="delete" class="modal">
+          <div class="modal-content">
+            <h4>Eliminar Post</h4>
+            <h6>Este post se eliminará de forma permanente. Para continuar, haz click en eliminar.</h6>
+          </div>
+          <div class="modal-footer">
+            <button onclick="closeModal('delete')" class="modal-close waves-effect waves-light btn-flat btn-small">Cancelar</button>
+            <button id="confirm-delete" class="modal-close waves-effect waves-light btn-flat btn-small red white-text">Eliminar</button>
+          </div>
+        </div>
+      </section>
     </main>
     <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
