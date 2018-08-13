@@ -6,10 +6,14 @@ const postsContainer = document.getElementById('posts-container');
 // Evento de post
 postForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  getCurrentUserData()
+  if (postForm.content.value !== '') {
+    getCurrentUserData()
     .then(userData => savePost(postForm, userData))
     .then(() => postForm.reset())
     .catch(error => console.log(error));
+  } else {
+    document.getElementById('empty-post').classList.add('modal-block');
+  }
 });
 
 // Publicar posts
