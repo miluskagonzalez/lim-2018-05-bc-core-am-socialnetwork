@@ -66,6 +66,11 @@ const getPosts = (postsContainer, currentID, renderPosts) => {
 // Borrar post
 const deletPost = id => database.doc(`posts/${id}`).delete();
 
+const updatePost = (postID, { content, privacy }) => database.doc(`posts/${postID}`).update({
+  content: content.value,
+  private: privacy.checked,
+});
+
 // Dar like a un post
 const updateLikeCount = (postID, likeCount) => database.doc(`posts/${postID}`).update({ likes: likeCount });
 
@@ -91,7 +96,7 @@ const onAuthState = (postsContainer, renderPosts) => {
       // });
     } else {
       // Usuario no está logueado
-      console.log(user, 'is signed out');
+      window.location.replace('index.html');
     }
   });
 };

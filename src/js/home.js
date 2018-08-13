@@ -56,31 +56,40 @@ const btnDeletePost = (postID) => {
   });
 };
 
-const btnEditPost = (postID, postContent, private) => {
+const btnEditPost = (postID, postContent, privatePost) => {
   document.getElementById(postID).innerHTML = `<form class="col s12" id="edit-form">
-  <div class="row">
-    <div class="input-field col s11 center-align">
-      <i class="material-icons prefix active">edit</i>
-      <textarea id="edit" name="content" class="materialize-textarea auto-height">${postContent}</textarea>
-      <label class="active" for="edit">Edita el contenido de tu post y/o la privacidad</label>
-    </div>
-    <div class="general-margin-right">
-      <div class="right">
-        <button class="waves-effect waves-light btn-small eucalyptus-bg general-margin-left">Guardar</button>
+    <div class="row">
+      <div class="input-field col s11 center-align">
+        <i class="material-icons prefix active">edit</i>
+        <textarea id="edit" name="content" class="materialize-textarea auto-height">${postContent}</textarea>
+        <label class="active" for="edit">Edita el contenido de tu post y/o la privacidad</label>
       </div>
-      <div class="switch right-align">
-        <label>
-          Público
-          <input name="privacy" type="checkbox" ${private === true ? 'checked' : ''}>
-          <span class="lever"></span>
-          Privado
-        </label>
+      <div class="general-margin-right">
+        <div class="right">
+          <button class="waves-effect waves-light btn-small eucalyptus-bg general-margin-left">Guardar</button>
+        </div>
+        <div class="switch right-align">
+          <label>
+            Público
+            <input name="privacy" type="checkbox" ${privatePost === true ? 'checked' : ''}>
+            <span class="lever"></span>
+            Privado
+          </label>
+        </div>
       </div>
     </div>
-  </div>
-</form>`
-// TO DO: que la información ingresada se guarde en el mismo post (con update) 
-}
+  </form>`;
+  const editForm = document.getElementById('edit-form');
+  editForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (editForm.content.value.trim() === '') {
+      document.getElementById('empty-post').classList.add('modal-block');
+    } else {
+      updatePost(postID, editForm)
+        .then(() => onAuthState(postsContainer, renderPosts));
+    }
+  });
+};
 
 // Evento likear post
 const btnLike = (postID, postLikes) => {
