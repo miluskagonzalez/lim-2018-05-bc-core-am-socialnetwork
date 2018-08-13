@@ -6,13 +6,13 @@ const postsContainer = document.getElementById('posts-container');
 // Evento de post
 postForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  if (postForm.content.value !== '') {
+  if (postForm.content.value.trim() === '') {
+    document.getElementById('empty-post').classList.add('modal-block');
+  } else {
     getCurrentUserData()
     .then(userData => savePost(postForm, userData))
     .then(() => postForm.reset())
     .catch(error => console.log(error));
-  } else {
-    document.getElementById('empty-post').classList.add('modal-block');
   }
 });
 
@@ -24,7 +24,7 @@ const renderPosts = (post, postID, isCurrentUser) => {
       <span class="deep-koamaru">${post.author.username}</span>
       <i class="material-icons tiny eucalyptus right">${post.private === true ? 'lock' : 'public'}</i>
     </p>
-    <p>${post.content}</p>
+    <p id="${postID}">${post.content}</p>
     ${isCurrentUser ? `<div class="general-margin-right">
       <div class="right">
         <button class="waves-effect waves-light btn-small general-margin-left red" onclick="btnDeletePost('${postID}')">
