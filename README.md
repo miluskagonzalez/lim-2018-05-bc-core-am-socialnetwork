@@ -86,6 +86,12 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 | **Digital Healthcare** | ✔ | ✔ | ✔ |  |  |  |
 | **Facebook** | ✔ |  | ✔ | ✔ |  |  |
 
+## Prototipos de baja fidelidad
+<img src="https://image.ibb.co/d7h9vp/39181077_514361795679932_3714646381709754368_n.jpg"/>
+<img src="https://image.ibb.co/kFU01U/39173306_652192715136935_3435224785913643008_n.jpg"/>
+<img src="https://image.ibb.co/fdj8MU/39087664_435219133653235_5347461581779238912_n.jpg"/>
+<img src="https://image.ibb.co/fA0q1U/39098004_440143746504896_6598233913246613504_n.jpg"/
+
 ## Primer prototipo móvil de alta fidelidad
 
 ![marvel](https://image.ibb.co/j7zSVe/marvel.png)
