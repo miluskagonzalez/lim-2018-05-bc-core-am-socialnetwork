@@ -11,14 +11,12 @@ postForm.addEventListener('submit', (event) => {
   } else {
     getCurrentUserData()
       .then(userData => savePost(postForm, userData))
-      .then(() => postForm.reset())
-      .catch(error => console.log(error));
+      .then(() => postForm.reset());
   }
 });
 
 // Publicar posts
 const renderPosts = (post, postID, isCurrentUser) => {
-  console.log(post, postID, isCurrentUser);
   postsContainer.innerHTML += `<div id="${postID}" class="row card container content-post">
     <p class="bold-text valign-wrapper">
       <span class="deep-koamaru">${post.author.username}</span>
@@ -45,14 +43,14 @@ const renderPosts = (post, postID, isCurrentUser) => {
 };
 
 const renderUserInfo = (photoURL, userData) => {
-  if (photoURL !== undefined && photoURL !== null) { document.getElementById('user-photo').src = photoURL };
+  if (photoURL !== undefined && photoURL !== null) { document.getElementById('user-photo').src = photoURL; }
   const names = [...document.getElementsByClassName('name')];
   names.forEach((name) => {
     const username = name;
     username.innerText = userData.data().username;
   });
   const emails = [...document.getElementsByClassName('email')];
-  emails.forEach(email => {
+  emails.forEach((email) => {
     const userEmail = email;
     userEmail.innerText = userData.data().email;
   });
@@ -65,8 +63,7 @@ const btnDeletePost = (postID) => {
   document.getElementById('delete').classList.add('modal-block');
   document.getElementById('confirm-delete').addEventListener('click', () => {
     deletPost(postID)
-      .then(() => closeModal('delete'))
-      .catch(error => console.error('Error removing document: ', error));
+      .then(() => closeModal('delete'));
   });
 };
 
@@ -114,12 +111,7 @@ const btnLike = (postID, postLikes) => {
 // Evento sign-out
 btnSignOut.addEventListener('click', () => {
   signOut()
-    .then((user) => {
-      console.log('Signed Out', user);
-      window.location.replace('index.html');
-    }).catch((error) => {
-      console.error('Sign Out Error', error);
-    });
+    .then(() => window.location.replace('index.html'));
 });
 
 onAuthState(postsContainer, renderPosts, renderUserInfo);
