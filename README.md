@@ -5,11 +5,13 @@ UNID∞S es una red social de salud, pensada en los usuarios que requieren de la
 
 ## Diseño inicial
 
-<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/dkbYmK/unidos.png" alt="Primer diseño"/></a>
+![Primer diseño](https://image.ibb.co/dkbYmK/unidos.png)
 
 ## Diseño actualizado
 
-<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/h7H35p/Captura.png" alt="diseño actualizado"/></a> <a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/em6Kvp/Captura3.png" alt="Diseño actualizado"/></a>
+![Diseño actualizado](https://image.ibb.co/h7H35p/Captura.png)
+
+![Diseño actualizado](https://image.ibb.co/em6Kvp/Captura3.png)
 
 En muchas ocaciones las personas no tienen los recursos para buscar ayuda profesional, o simplemente prefieren obtener una recomendación antes de elegir a su médico. Esto hace que las redes sociales sean un excelente lugar para crear comunidades y que así las personaLas personas día a día puedan resolver sus preocupaciones en torno a la salud mediante esta. Nadie debe enfrentar desafíos de salud solo, ya sea que esté manejando una condición seria, trabajando para mejorar su bienestar o cuidando a un ser querido, contará con apoyo para buscar respuestas por medio de está red. 
 
@@ -66,17 +68,25 @@ Para asegurarnos que los usuarios usen el producto, recibimos el feedback que no
 
 ## Tablero Kanban
 
-<img src="https://image.ibb.co/hCKWQp/Captura15.png" alt="Tablero"/>
+![Tablero](https://image.ibb.co/hCKWQp/Captura15.png)
 
 ## Encuesta social:
-<img src="https://preview.ibb.co/dtMzT9/edad.png" alt="Encuesta"/>
-<img src="https://image.ibb.co/hq0XgU/genero.png" alt="Encuesta"/>
-<img src="https://image.ibb.co/ca2Oo9/enfermedad.png" alt="Encuesta"/>
-<img src="https://preview.ibb.co/igOPvp/apoyo.png" alt="Encuesta"/>
-<img src="https://preview.ibb.co/mR1io9/buscarapoyo.png" alt="Encuesta"/>
-<img src="https://preview.ibb.co/kPpEvp/redsocial.png" alt="Encuesta"/>
-<img src="https://preview.ibb.co/fLeEvp/frecuencia.png" alt="Encuesta"/>
-<img src="https://image.ibb.co/e0dJMU/visitar.png" alt="Encuesta"/>
+
+![Encuesta](https://preview.ibb.co/dtMzT9/edad.png)
+
+![Encuesta](https://image.ibb.co/hq0XgU/genero.png)
+
+![Encuesta](https://image.ibb.co/ca2Oo9/enfermedad.png)
+
+![Encuesta](https://preview.ibb.co/igOPvp/apoyo.png)
+
+![Encuesta](https://preview.ibb.co/mR1io9/buscarapoyo.png)
+
+![Encuesta](https://preview.ibb.co/kPpEvp/redsocial.png)
+
+![Encuesta](https://preview.ibb.co/fLeEvp/frecuencia.png)
+
+![Encuesta](https://image.ibb.co/e0dJMU/visitar.png)
 
 ## Entrevista realizada a posible usuaria
 
@@ -129,12 +139,14 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 
 ## Trello
 
-<img src="https://image.ibb.co/fkwKd9/Captura3.png" alt="Trello"/>
+![Trello](https://image.ibb.co/fkwKd9/Captura3.png)
 
 ## Moodboard
 
-<img src="https://preview.ibb.co/kskbqe/moodboard.png" alt="Moodboard"/>
-<a href="https://image.ibb.co/egNNVe/moodboard.png">MOODBOARD</a>
+![Moodboard](https://preview.ibb.co/kskbqe/moodboard.png)
+
+[MOODBOARD](https://preview.ibb.co/kskbqe/moodboard.png)
+
 
 ## Benchmark de Redes Sociales 
 
@@ -150,18 +162,18 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 
 ### Sketch de interfaz  
 
-<img src="https://image.ibb.co/cU8zT9/Captura13.png" alt="Interfaz"/>
+![Interfaz](https://image.ibb.co/cU8zT9/Captura13.png)
 
-<img src="https://image.ibb.co/gDF7Fp/Captura12.png" alt="Muro"/>
+![Muro](https://image.ibb.co/gDF7Fp/Captura12.png)
 
 ### Sketch para el logotipo
 
-<img src="https://image.ibb.co/jfmKT9/Captura10.png" alt="Logo"/>
+![Logo](https://image.ibb.co/jfmKT9/Captura10.png)
 
 ## Primer prototipo móvil de alta fidelidad
 
 ![marvel](https://image.ibb.co/j7zSVe/marvel.png)
 ![marvel](https://image.ibb.co/cspGOz/marvelMe2.png)
 
-<a href="https://marvelapp.com/e2b3f54/screen/45795042">Marvel</a>
+[MARVEL](https://marvelapp.com/e2b3f54/screen/45795042)
 
