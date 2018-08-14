@@ -64,6 +64,10 @@ Para asegurarnos que los usuarios usen el producto, recibimos el feedback que no
 ***
 ## Para desarrollar esta red social, utilizamos diferentes herramientas:
 
+## Tablero Kanban
+
+<img src="https://image.ibb.co/hCKWQp/Captura15.png"/>
+
 ## Encuesta social:
 <img src="https://preview.ibb.co/dtMzT9/edad.png"/>
 <img src="https://image.ibb.co/hq0XgU/genero.png"/>
