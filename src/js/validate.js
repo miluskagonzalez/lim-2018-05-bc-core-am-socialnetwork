@@ -3,7 +3,7 @@ window.validate = (input) => {
   let regex;
   switch (input.type) {
     case 'text':
-      regex = /^[ña-z]+[ña-z ]{3,15}$/i;
+      regex = /^[ña-z]+[ña-z ]{2,14}$/i;
       break;
     case 'email':
       regex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/;
