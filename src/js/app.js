@@ -1,93 +1,57 @@
+/* eslint-disable no-unused-vars */
 // Declarando variables del form de registro
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const usernameError = document.getElementById('username-error');
-const emailError = document.getElementById('email-error');
-const passwordError = document.getElementById('password-error');
 const btnSignUp = document.getElementById('sign-up');
 // Declarando variables del form de inicio de sesión
 const userEmail = document.getElementById('user-email');
 const userPassword = document.getElementById('user-password');
-const userEmailError = document.getElementById('user-email-error');
-const userPasswordError = document.getElementById('user-password-error');
 const btnSignIn = document.getElementById('sign-in');
 // Botones de registro con proveedor
 const btnFb = document.getElementById('fbBtn');
 const btnGoogle = document.getElementById('btnGoogle');
-const usernameModal = document.getElementById('username-modal');
 const usernameWithProvider = document.getElementById('username-with-provider');
-const usernameWithProviderError = document.getElementById('username-with-provider-error');
 const signInWithProvider = document.getElementById('signin-with-provider');
-// Mostrando en la UI estado de validación de nombre de usuario
-username.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    usernameError.innerText = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
-    usernameError.classList.remove('hide');
-    username.classList.add('invalid');
+
+const closeModal = modalID => document.getElementById(modalID).classList.remove('modal-block');
+
+// Mostrando en la UI estado de validación de inputs
+const validationHandler = (input, containerID, message) => {
+  const container = document.getElementById(containerID);
+  if (!validate(input)) {
+    container.innerText = message;
+    container.classList.remove('hide');
+    input.classList.add('invalid');
   } else {
-    usernameError.classList.add('hide');
-    username.classList.remove('invalid');
-    username.classList.add('valid');
+    container.classList.add('hide');
+    input.classList.remove('invalid');
+    input.classList.add('valid');
   }
+};
+username.addEventListener('change', (event) => {
+  const errorMessage = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
+  validationHandler(event.target, 'username-error', errorMessage);
 });
 usernameWithProvider.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    usernameWithProviderError.innerText = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
-    usernameWithProviderError.classList.remove('hide');
-    usernameWithProvider.classList.add('invalid');
-  } else {
-    usernameWithProviderError.classList.add('hide');
-    usernameWithProvider.classList.remove('invalid');
-    usernameWithProvider.classList.add('valid');
-  }
+  const errorMessage = 'Escribe un nombre que contenga entre 3 y 15 letras mayúsculas o minúsculas.';
+  validationHandler(event.target, 'username-with-provider-error', errorMessage);
 });
-// Mostrando en la UI estado de validación de correo eléctrónico
 email.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    emailError.innerText = 'Introduce un correo electrónico válido.';
-    emailError.classList.remove('hide');
-    email.classList.add('invalid');
-  } else {
-    emailError.classList.add('hide');
-    email.classList.remove('invalid');
-    email.classList.add('valid');
-  }
+  const errorMessage = 'Introduce un correo electrónico válido.';
+  validationHandler(event.target, 'email-error', errorMessage);
 });
 userEmail.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    userEmailError.innerText = 'Introduce un correo electrónico válido.';
-    userEmailError.classList.remove('hide');
-    userEmail.classList.add('invalid');
-  } else {
-    userEmailError.classList.add('hide');
-    userEmail.classList.remove('invalid');
-    userEmail.classList.add('valid');
-  }
+  const errorMessage = 'Introduce un correo electrónico válido.';
+  validationHandler(event.target, 'user-email-error', errorMessage);
 });
-// Mostrando en la UI estado de validación de contraseña
 password.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    passwordError.innerText = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
-    passwordError.classList.remove('hide');
-    password.classList.add('invalid');
-  } else {
-    passwordError.classList.add('hide');
-    password.classList.remove('invalid');
-    password.classList.add('valid');
-  }
+  const errorMessage = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
+  validationHandler(event.target, 'password-error', errorMessage);
 });
-// Mostrando en la UI estado de validación de contraseña
 userPassword.addEventListener('change', (event) => {
-  if (!validate(event.target)) {
-    userPasswordError.innerText = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
-    userPasswordError.classList.remove('hide');
-    userPassword.classList.add('invalid');
-  } else {
-    userPasswordError.classList.add('hide');
-    userPassword.classList.remove('invalid');
-    userPassword.classList.add('valid');
-  }
+  const errorMessage = 'Tu contraseña debe tener 6 caracteres como mínimo, entre letras y números.';
+  validationHandler(event.target, 'user-password-error', errorMessage);
 });
 
 // Regitra usuario si inputs son válidos
@@ -97,10 +61,7 @@ btnSignUp.addEventListener('click', () => {
       .then(({ user }) => saveUser(user, username.value))
       .then(() => window.location.replace('home.html'))
       .catch((error) => {
-        console.log(error)
-        if ( error.code === auth/user-not-found) {
-
-        }
+        console.log(error);
       });
   }
 });
@@ -109,33 +70,40 @@ btnSignIn.addEventListener('click', () => {
   if (validate(userEmail) && validate(userPassword)) {
     emailSignIn(userEmail.value, userPassword.value)
       .then(() => window.location.replace('home.html'))
-      .catch((error) => {
-        console.log(error);
+      .catch(({ code }) => {
+        if (code === 'auth/user-not-found') {
+          document.getElementById('user-not-found').classList.add('modal-block');
+        } else if (code === 'auth/wrong-password') {
+          const container = document.getElementById('user-password-error');
+          container.innerText = 'Tu contraseña es incorrecta.';
+          container.classList.remove('hide');
+          userPassword.classList.add('invalid');
+        }
       });
   }
 });
-
-const processUser = (additionalUserInfo, user) => {
-  const { isNewUser } = additionalUserInfo;
+// Obtener nombre de usuario registrado con proveedor
+const getUsername = (user) => {
+  document.getElementById('username-modal').classList.add('modal-block');
+  signInWithProvider.addEventListener('click', () => {
+    if (validate(usernameWithProvider)) {
+      saveUser(user, usernameWithProvider.value)
+        .then(() => window.location.replace('home.html'));
+    }
+  });
+};
+// Verificar si es usuario nuevo
+const verifyUserStatus = ({ isNewUser }, user) => {
   if (isNewUser) {
-    usernameModal.classList.add('modal-block');
-    signInWithProvider.addEventListener('click', () => {
-      if (validate(usernameWithProvider)) {
-        saveUser(user, usernameWithProvider.value)
-          .then(() => {
-            window.location.replace('home.html');
-          });
-      }
-    });
+    getUsername(user);
   } else {
     window.location.replace('home.html');
   }
 };
-
 // Evento sign-in con Facebook
 btnFb.addEventListener('click', () => {
   fbSignIn()
-    .then(({ additionalUserInfo, user }) => processUser(additionalUserInfo, user))
+    .then(({ additionalUserInfo, user }) => verifyUserStatus(additionalUserInfo, user))
     .catch((error) => {
       const {
         code, message,
@@ -146,7 +114,7 @@ btnFb.addEventListener('click', () => {
 // Evento sign-in con Google
 btnGoogle.addEventListener('click', () => {
   googleSignIn()
-    .then(({ additionalUserInfo, user }) => processUser(additionalUserInfo, user))
+    .then(({ additionalUserInfo, user }) => verifyUserStatus(additionalUserInfo, user))
     .catch((error) => {
       const {
         code, message, mail, credential,
