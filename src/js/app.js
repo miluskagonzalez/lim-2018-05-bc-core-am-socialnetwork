@@ -27,8 +27,7 @@ username.addEventListener('change', (event) => {
     username.classList.add('invalid');
   } else {
     usernameError.classList.add('hide');
-    username.classList.remove('invalid');
-    username.classList.add('valid');
+    username.classList.replace('invalid', 'valid');
   }
 });
 usernameWithProvider.addEventListener('change', (event) => {
@@ -38,8 +37,7 @@ usernameWithProvider.addEventListener('change', (event) => {
     usernameWithProvider.classList.add('invalid');
   } else {
     usernameWithProviderError.classList.add('hide');
-    usernameWithProvider.classList.remove('invalid');
-    usernameWithProvider.classList.add('valid');
+    usernameWithProvider.classList.replace('invalid', 'valid');
   }
 });
 // Mostrando en la UI estado de validación de correo eléctrónico
@@ -50,8 +48,7 @@ email.addEventListener('change', (event) => {
     email.classList.add('invalid');
   } else {
     emailError.classList.add('hide');
-    email.classList.remove('invalid');
-    email.classList.add('valid');
+    email.classList.replace('invalid', 'valid');
   }
 });
 userEmail.addEventListener('change', (event) => {
@@ -61,8 +58,7 @@ userEmail.addEventListener('change', (event) => {
     userEmail.classList.add('invalid');
   } else {
     userEmailError.classList.add('hide');
-    userEmail.classList.remove('invalid');
-    userEmail.classList.add('valid');
+    userEmail.classList.replace('invalid', 'valid');
   }
 });
 // Mostrando en la UI estado de validación de contraseña
@@ -73,8 +69,7 @@ password.addEventListener('change', (event) => {
     password.classList.add('invalid');
   } else {
     passwordError.classList.add('hide');
-    password.classList.remove('invalid');
-    password.classList.add('valid');
+    password.classList.replace('invalid', 'valid');
   }
 });
 // Mostrando en la UI estado de validación de contraseña
@@ -85,8 +80,7 @@ userPassword.addEventListener('change', (event) => {
     userPassword.classList.add('invalid');
   } else {
     userPasswordError.classList.add('hide');
-    userPassword.classList.remove('invalid');
-    userPassword.classList.add('valid');
+    userPassword.classList.replace('invalid', 'valid');
   }
 });
 
