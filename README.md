@@ -5,7 +5,8 @@ UNID∞S es una red social de salud, pensada en los usuarios que requieren de la
 
 ## Diseño actualizado
 
-<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/h7H35p/Captura.png" alt="diseño actualizado"/></a> <a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/em6Kvp/Captura3.png" alt="Diseño actualizado"/></a>
+![Diseño actualizado](https://image.ibb.co/kDawRU/unidos1.png)
+![Diseño actualizado](https://image.ibb.co/kG4C0p/unidos2.png)
 
 ## Elementos básicos que tiene una red social
 
@@ -76,26 +77,37 @@ Nos organizamos por sprints, desarrollando un tablero previo ánalisis, separand
 
 ## Tablero Kanban
 
-<img src="https://image.ibb.co/hCKWQp/Captura15.png" alt="Tablero"/>
+![Tablero](https://image.ibb.co/hCKWQp/Captura15.png)
 
 ## Trello
 
-<img src="https://image.ibb.co/fkwKd9/Captura3.png" alt="Trello"/>
+![Trello](https://image.ibb.co/fkwKd9/Captura3.png)
 
 ## Encuesta realizada:
 
-<img src="https://image.ibb.co/hq0XgU/genero.png" alt="Encuesta"/>
+![Encuesta](https://image.ibb.co/hq0XgU/genero.png)
+
 La gran mayoría de personas que asume el rol de cuidadora de un pariente enfermo suelen ser mujeres. Es un rol influenciado motivos culturales de nuestra sociedad.
-<img src="https://image.ibb.co/ca2Oo9/enfermedad.png" alt="Encuesta"/>
+
+![Encuesta](https://image.ibb.co/ca2Oo9/enfermedad.png)
+
 Corroboramos que el problema que planteamos incialmente tiene una gran tasa de incidencia, puesto que es un tema recurrente el haber lidiado o estar lidiando con un problema de salud.
-<img src="https://preview.ibb.co/igOPvp/apoyo.png" alt="Encuesta"/>
+
+![Encuesta](https://preview.ibb.co/igOPvp/apoyo.png)
+
 El apoyo emocional, familiar, de amigos y personas con quien hablar es una necesidad recurrente en las personas que atraviesan esta situación. 
-<img src="https://preview.ibb.co/mR1io9/buscarapoyo.png" alt="Encuesta"/>
+
+![Encuesta](https://preview.ibb.co/mR1io9/buscarapoyo.png)
+
 En su mayoría, las personas encuestadas sí piden o pidieron apoyo, aunque sólo en su entorno cercano.
-<img src="https://preview.ibb.co/kPpEvp/redsocial.png" alt="Encuesta"/>
-<img src="https://preview.ibb.co/fLeEvp/frecuencia.png" alt="Encuesta"/>
+
+![Encuesta](https://preview.ibb.co/kPpEvp/redsocial.png)
+![Encuesta](https://preview.ibb.co/fLeEvp/frecuencia.png)
+
 La mayoría de encuestados no había encontrado o no se había planteado buscar ayuda en Internet, pero sí ingresan con frecuencia a redes sociales.
-<img src="https://image.ibb.co/e0dJMU/visitar.png" alt="Encuesta"/>
+
+![Encuesta](https://image.ibb.co/e0dJMU/visitar.png)
+
 La mayoría de encuestados usa el móvil para ingresar a redes sociales, seguido de la computadora.
 
 Conclusiones: 
@@ -177,8 +189,9 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 
 Realizamos un moodboard para desarrollar la interfaz.
 
-<img src="https://preview.ibb.co/kskbqe/moodboard.png" alt="Moodboard"/>
-<a href="https://image.ibb.co/egNNVe/moodboard.png">MOODBOARD</a>
+![Moodboard](https://preview.ibb.co/kskbqe/moodboard.png)
+
+[MOODBOARD](https://preview.ibb.co/kskbqe/moodboard.png)
 
 ## Benchmark de Redes Sociales 
 
@@ -196,15 +209,17 @@ Realizamos un moodboard para desarrollar la interfaz.
 
 #### Registro e inicio de sesión
 
-<img src="https://image.ibb.co/cU8zT9/Captura13.png" alt="Interfaz"/>
+![Interfaz](https://image.ibb.co/cU8zT9/Captura13.png)
 
 #### Muro
 
-<img src="https://image.ibb.co/gDF7Fp/Captura12.png" alt="Muro"/>
+![Muro](https://image.ibb.co/gDF7Fp/Captura12.png)
 
 ### Boceto para el logotipo
 
-<img src="https://image.ibb.co/jfmKT9/Captura10.png" alt="Logo"/>
+![Logo](https://image.ibb.co/jfmKT9/Captura10.png)
+
+![Logo](https://image.ibb.co/jfmKT9/Captura10.png)
 
 ## Primer prototipo móvil de alta fidelidad
 
@@ -213,17 +228,19 @@ Este fue el primer protito desarrollado. Se fue cambiando hasta el diseño actua
 ![marvel](https://image.ibb.co/j7zSVe/marvel.png)
 ![marvel](https://image.ibb.co/cspGOz/marvelMe2.png)
 
-<a href="https://marvelapp.com/e2b3f54/screen/45795042">Marvel</a>
+[MARVEL](https://marvelapp.com/e2b3f54/screen/45795042)
 
 ## Primer producto HTML
 
 El primer producto HTML desarrollado cambió casi por completo hasta llegar nuestra versión final.
 
+![Primer diseño](https://image.ibb.co/kaPgRU/unidos.png)
+
 ## Segundo producto HTML
 
 Esta segunda versión es la penúltima para llegar a nuestro diseño final
 
-<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/dkbYmK/unidos.png" alt="Primer diseño"/></a>
+![Segundo diseño](https://image.ibb.co/dkbYmK/unidos.png)
 
 ## Testing de prototipos y producto con usuarios
 
