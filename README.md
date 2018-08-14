@@ -5,11 +5,11 @@ UNID∞S es una red social de salud, pensada en los usuarios que requieren de la
 
 ## Diseño inicial
 
-<center><a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/dkbYmK/unidos.png"/></a><center>
+<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/dkbYmK/unidos.png" alt="Primer diseño"/></a>
 
 ## Diseño actualizado
 
-<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/h7H35p/Captura.png"/></a> <a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/em6Kvp/Captura3.png"/></a>
+<a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/h7H35p/Captura.png" alt="diseño actualizado"/></a> <a href="https://florball.github.io/lim-2018-05-bc-core-am-socialnetwork/src/"><img src="https://image.ibb.co/em6Kvp/Captura3.png" alt="Diseño actualizado"/></a>
 
 En muchas ocaciones las personas no tienen los recursos para buscar ayuda profesional, o simplemente prefieren obtener una recomendación antes de elegir a su médico. Esto hace que las redes sociales sean un excelente lugar para crear comunidades y que así las personaLas personas día a día puedan resolver sus preocupaciones en torno a la salud mediante esta. Nadie debe enfrentar desafíos de salud solo, ya sea que esté manejando una condición seria, trabajando para mejorar su bienestar o cuidando a un ser querido, contará con apoyo para buscar respuestas por medio de está red. 
 
@@ -66,17 +66,17 @@ Para asegurarnos que los usuarios usen el producto, recibimos el feedback que no
 
 ## Tablero Kanban
 
-<img src="https://image.ibb.co/hCKWQp/Captura15.png"/>
+<img src="https://image.ibb.co/hCKWQp/Captura15.png" alt="Tablero"/>
 
 ## Encuesta social:
-<img src="https://preview.ibb.co/dtMzT9/edad.png"/>
-<img src="https://image.ibb.co/hq0XgU/genero.png"/>
-<img src="https://image.ibb.co/ca2Oo9/enfermedad.png"/>
-<img src="https://preview.ibb.co/igOPvp/apoyo.png"/>
-<img src="https://preview.ibb.co/mR1io9/buscarapoyo.png"/>
-<img src="https://preview.ibb.co/kPpEvp/redsocial.png"/>
-<img src="https://preview.ibb.co/fLeEvp/frecuencia.png"/>
-<img src="https://image.ibb.co/e0dJMU/visitar.png"/>
+<img src="https://preview.ibb.co/dtMzT9/edad.png" alt="Encuesta"/>
+<img src="https://image.ibb.co/hq0XgU/genero.png" alt="Encuesta"/>
+<img src="https://image.ibb.co/ca2Oo9/enfermedad.png" alt="Encuesta"/>
+<img src="https://preview.ibb.co/igOPvp/apoyo.png" alt="Encuesta"/>
+<img src="https://preview.ibb.co/mR1io9/buscarapoyo.png" alt="Encuesta"/>
+<img src="https://preview.ibb.co/kPpEvp/redsocial.png" alt="Encuesta"/>
+<img src="https://preview.ibb.co/fLeEvp/frecuencia.png" alt="Encuesta"/>
+<img src="https://image.ibb.co/e0dJMU/visitar.png" alt="Encuesta"/>
 
 ## Entrevista realizada a posible usuaria
 
@@ -129,11 +129,12 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 
 ## Trello
 
-<img src="https://image.ibb.co/fkwKd9/Captura3.png"/>
+<img src="https://image.ibb.co/fkwKd9/Captura3.png" alt="Trello"/>
 
 ## Moodboard
 
-<center><img src="https://preview.ibb.co/kskbqe/moodboard.png"/></center> <center><a href="https://image.ibb.co/egNNVe/moodboard.png">MOODBOARD</a></center>
+<img src="https://preview.ibb.co/kskbqe/moodboard.png" alt="Moodboard"/>
+<a href="https://image.ibb.co/egNNVe/moodboard.png">MOODBOARD</a>
 
 ## Benchmark de Redes Sociales 
 
@@ -149,13 +150,13 @@ Sí, me gustaría comentarte que yo quisiera que mi mamá se uniera a un grupo d
 
 ### Sketch de interfaz  
 
-<img src="https://image.ibb.co/cU8zT9/Captura13.png"/>
+<img src="https://image.ibb.co/cU8zT9/Captura13.png" alt="Interfaz"/>
 
-<img src="https://image.ibb.co/gDF7Fp/Captura12.png"/>
+<img src="https://image.ibb.co/gDF7Fp/Captura12.png" alt="Muro"/>
 
 ### Sketch para el logotipo
 
-<img src="https://image.ibb.co/jfmKT9/Captura10.png"/>
+<img src="https://image.ibb.co/jfmKT9/Captura10.png" alt="Logo"/>
 
 ## Primer prototipo móvil de alta fidelidad
 
