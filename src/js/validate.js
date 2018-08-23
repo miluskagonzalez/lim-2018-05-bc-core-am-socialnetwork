@@ -3,10 +3,10 @@ window.validate = (input) => {
   let regex;
   switch (input.type) {
     case 'text':
-      regex = /^[ña-z]+[ña-z ]{2,14}$/i;
+      regex = /^[ña-z][ña-z ]{2,15}$/i;
       break;
     case 'email':
-      regex = /^\w+([.-]?\w+)*@(([a-zA-Z0-9-])+\.)+([a-zA-Z]{2,4})+$/;
+      regex = /^[a-zA-Z0-9]+([_.-]?[a-zA-Z0-9]+)*@([a-zA-Z0-9-])+(\.[a-zA-Z]{2,4})+$/;
       break;
     case 'password':
       regex = /^[ña-z\d]{6,}$/i;
@@ -15,3 +15,5 @@ window.validate = (input) => {
   }
   return regex.test(input.value);
 };
+
+module.exports = validate;
