@@ -34,14 +34,11 @@
     <!--Sidenav-->
     <aside class="fixed">
       <ul id="slide-out" class="sidenav fixed">
-        <li>
-          <div class="user-view">
-            <img id="user-photo" class="circle">
+        <li class="user-view">
+            <img id="user-photo" class="circle" src="assets/images/default-icon.png" alt="user-photo">
             <span class="name"></span>
             <span class="email"></span>
-          </div>
         </li>
-        <div class="divider"></div>
         <li>
           <a id="sign-out" class="waves-effect waves-light eucalyptus-bg white-text">Cerrar Sesión</a>
         </li>
@@ -49,7 +46,7 @@
     </aside>
     <main id="main" class="section">
       <!-- Contenedor para postear -->
-      <section>
+      <div>
         <div class="row card container content-post">
           <form class="col s12" id="post-form">
             <div class="row">
@@ -74,9 +71,9 @@
             </div>
           </form>
         </div>
-      </section>
+      </div>
       <!-- Contenedor de publicaciones -->
-      <section id="posts-container"></section>
+      <div id="posts-container"></div>
       <section>
         <div id="delete" class="modal">
           <div class="modal-content">
