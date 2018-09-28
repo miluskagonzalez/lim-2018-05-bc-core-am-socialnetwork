@@ -15,5 +15,3 @@ window.validate = (input) => {
   }
   return regex.test(input.value);
 };
-
-module.exports = validate;
