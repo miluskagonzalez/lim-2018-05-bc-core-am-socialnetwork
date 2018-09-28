@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Ícono -->
-    <link rel="icon" type="image/x-icon" 
-    href="http://starme.mx/icons/Nueva%20carpeta/Categor%C3%ADas/11.Salud-icono.png">
+    <link rel="icon" type="image/png" href="assets/images/icon.png">
     <!--Optimizado para mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Google Icon Font-->
@@ -18,22 +17,23 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <title>Home</title>
+    <title>Unidos</title>
   </head>
-  <body class="grey lighten-3">
+  <body class="row grey lighten-3">
     <!-- Barra de navegacion -->
     <div class="navbar-fixed">
       <nav class="eucalyptus-bg">
-      <header class="nav-wrapper logo-margin-left">
-        <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-          <i class="material-icons brand-logo deep-koamaru">all_inclusive</i>
-        </a>
-      </header>
-    </nav>
+        <header class="nav-wrapper valign-wrapper">
+          <div class="">
+              <img data-target="slide-out" class="sidenav-trigger show-on-large"
+              src="assets/images/icon.png" alt="logo unidos">
+          </div>
+        </header>
+      </nav>
     </div>
     <!--Sidenav-->
-    <aside class="fixed">
-      <ul id="slide-out" class="sidenav fixed">
+    <aside>
+      <ul id="slide-out" class="sidenav fixed sidenav-fixed">
         <li class="user-view">
             <img id="user-photo" class="circle" src="assets/images/default-icon.png" alt="user-photo">
             <span class="name"></span>
@@ -44,7 +44,7 @@
         </li>
       </ul>
     </aside>
-    <main id="main" class="section">
+    <main id="main" class="section aside-padding">
       <!-- Contenedor para postear -->
       <div>
         <div class="row card container content-post">

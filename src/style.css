@@ -1,10 +1,7 @@
 /* home */
-
-/* margen para logo */
-.logo-margin-left {
-  margin-left: 4%;
+nav .sidenav-trigger {
+  height: auto;
 }
-
 /* ancho de barra lateral */
 .width-collection {
   width: 20%;
@@ -99,8 +96,7 @@ textarea.materialize-textarea:focus:not([readonly])+label {
   overflow-x: hidden;
 }
 
- /* Sobre escribiendo colores por default */
-
+ /* Sobre escribiendo valores por default */
 .tabs .tab a:focus,
 .tabs .tab a:focus.active {
   background: transparent;
@@ -176,4 +172,25 @@ textarea.materialize-textarea:focus:not([readonly]) {
     margin-bottom: 30px;
   }
 
+}
+
+@media (max-width: 993px) {
+
+  nav .sidenav-trigger {
+    cursor: pointer;
+  }
+  
+}
+
+@media (min-width: 993px) {
+  .aside-padding {
+    padding-left: 300px;
+  }
+  .sidenav-fixed {
+    padding-top: 64px;
+    z-index: -1;
+  }
+  .container {
+    width: 85%;
+  }
 }
