@@ -188,7 +188,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   }
   .sidenav-fixed {
     padding-top: 64px;
-    z-index: -1;
+    z-index: 0;
   }
   .container {
     width: 85%;
