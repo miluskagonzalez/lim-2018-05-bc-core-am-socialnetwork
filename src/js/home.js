@@ -37,7 +37,7 @@ const renderPosts = (post, postID, isCurrentUser) => {
     </div>` : ''}
     <div class="valign-wrapper">
       <i class="material-icons eucalyptus left btn-custom" onclick="btnLike('${postID}', '${post.likes}')">favorite</i>
-      <p> Likes <span>${post.likes}</span></p>
+      <p><span>${post.likes}</span> Likes</p>
     </div>
   </div>`;
 };
